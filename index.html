@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <style>
+      h1 {
+        color: gray;
+        cursor: pointer;
+      }
+    </style>
+    <title>html 테스트</title>
+  </head>
+  <body>
+    <h1 id="content">내용</h1>
+    <script>
+      const contentEl = document.getElementById("content");
+      contentEl.addEventListener("click", () => {
+        contentEl.style.color = "red";
+      });
+    </script>
+  </body>
+</html>
