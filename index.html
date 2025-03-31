@@ -1,20 +1,13 @@
-<html>
+<!doctype html>
+<html lang="ko">
   <head>
-    <style>
-      h1 {
-        color: gray;
-        cursor: pointer;
-      }
-    </style>
-    <title>html 테스트</title>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Study Game App</title>
   </head>
   <body>
-    <h1 id="content">내용</h1>
-    <script>
-      const contentEl = document.getElementById("content");
-      contentEl.addEventListener("click", () => {
-        contentEl.style.color = "red";
-      });
-    </script>
+    <div id="app"></div>
+    <script type="module" src="./src/App.js"></script>
   </body>
 </html>
