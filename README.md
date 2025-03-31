@@ -148,10 +148,21 @@ e.g. style: 홈페이지 스타일링 (#이슈번호)
 
 ## 💁 구성원
 
-| [![AndyH0ng](https://avatars.githubusercontent.com/u/60703412?v=4)](https://github.com/AndyH0ng) | [![duwlsssss](https://avatars.githubusercontent.com/u/92291790?v=4)](https://github.com/duwlsssss) | [![minji2424](https://avatars.githubusercontent.com/u/162069481?v=4)](https://github.com/minji2424) | [![jangtaebin3](https://avatars.githubusercontent.com/u/162237964?v=4)](https://github.com/jangtaebin3) |
-| :------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------: |
-| **🍀 [홍준우](https://github.com/AndyH0ng)** | **🍀 [김여진](https://github.com/duwlsssss)** | **🍀 [박민지](https://github.com/minji2424)** | **🍀 [장태빈](https://github.com/jangtaebin3)** |
-| 역할 | 역할 | 역할 | 역할 |
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/AndyH0ng"><img src="https://avatars.githubusercontent.com/u/60703412?v=4" width="100px;" alt="AndyH0ng"/><br /><sub><b>🍀 홍준우</b></sub></a></td>
+    <td align="center"><a href="https://github.com/duwlsssss"><img src="https://avatars.githubusercontent.com/u/92291790?v=4" width="100px;" alt="duwlsssss"/><br /><sub><b>🍀 김여진</b></sub></a></td>
+    <td align="center"><a href="https://github.com/minji2424"><img src="https://avatars.githubusercontent.com/u/162069481?v=4" width="100px;" alt="minji2424"/><br /><sub><b>🍀 박민지</b></sub></a></td>
+    <td align="center"><a href="https://github.com/jangtaebin3"><img src="https://avatars.githubusercontent.com/u/162237964?v=4" width="100px;" alt="jangtaebin3"/><br /><sub><b>🍀 장태빈</b></sub></a></td>
+  </tr>
+  <tr>
+    <td align="center">역할</td>
+    <td align="center">역할</td>
+    <td align="center">역할</td>
+    <td align="center">역할</td>
+  </tr>
+</table>
+
 
 &nbsp;
 
