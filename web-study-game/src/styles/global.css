@@ -1,13 +1,13 @@
-@import './reset.css';
+@import url('./reset.css');
 
 :root {
-  --css-variable: #000;
+  --css-variable: #000000;
 }
 
 body {
   margin: 0 auto;
-  font-family: 'Pretendard', sans-serif;
+  font-family: Pretendard, sans-serif;
   font-weight: 500;
+  font-optical-sizing: auto; /* 가변 글꼴에서 글자 더 읽기 쉽게 만듦 */
   word-break: keep-all;
-  font-optical-sizing: auto; /*가변 글꼴에서 글자 더 읽기 쉽게 만듦*/
 }
