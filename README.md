@@ -84,7 +84,7 @@ npm run dev
 
 ### 커밋 컨벤션
 
-e.g. style: 홈페이지 스타일링 (#이슈번호)
+e.g. style: 홈페이지 스타일링
 
 - `feat`: 새로운 기능 추가
 - `style`: css 수정 및 코드의 의미에 영향을 미치지 않는 변경사항
@@ -108,7 +108,7 @@ e.g. style: 홈페이지 스타일링 (#이슈번호)
 - **main**: 배포 단계에서만 사용하는 브랜치
 - **develop**: 개발 단계에서 main 역할을 하는 브랜치
 - **feat**: 기능 단위로 독립적인 개발 환경을 위하여 사용하고 merge 후 각 브랜치를 삭제
-  - feat 브랜치 이름 규칙: `feat/기능명-이슈번호` e.g. feat/admin-login-12
+  - feat 브랜치 이름 규칙: `feat/기능명` e.g. feat/admin-login
 
 &nbsp;
 
