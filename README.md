@@ -1,4 +1,4 @@
-# TEAM6 - 웹 계산기 과제
+# 6조 - 웹 계산기 과제
 
 ## 📂 프로젝트 소개
 
@@ -15,11 +15,11 @@
 |     Bundler     |                                                               ![VITE](https://img.shields.io/badge/VITE-646CFF?style=for-the-badge&logo=Vite&logoColor=white)                                                                |
 |    Language     | ![HTML5](https://img.shields.io/badge/HTML5-E34F26.svg?style=for-the-badge&logo=HTML5&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=for-the-badge&logo=JavaScript&logoColor=black) |
 |     Styling     |                                                               ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=white)                                                                |
-|    Formatting    |      ![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white) ![Prettier](https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E)      |
+|   Formatting    |      ![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white) ![Prettier](https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E)      |
 | Package Manager |                                                                 ![Npm](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white)                                                                 |
 | Version Control |       ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)       |
 |   Deployment    |                                                            ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=Vercel&logoColor=white)                                                             |
-|  Collaboration  |          ![Notion](https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white)           |
+|  Collaboration  |                                                            ![Notion](https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white)                                                             |
 
 </div>
 
@@ -66,6 +66,7 @@ npm run dev
 ```
 
 ```
+
 &nbsp;
 
 ## 📌 우리의 컨벤션
@@ -84,6 +85,7 @@ npm run dev
 ### 커밋 컨벤션
 
 e.g. style: 홈페이지 스타일링 (#이슈번호)
+
 - `feat`: 새로운 기능 추가
 - `style`: css 수정 및 코드의 의미에 영향을 미치지 않는 변경사항
 - `fix`: 버그 수정
@@ -163,7 +165,6 @@ e.g. style: 홈페이지 스타일링 (#이슈번호)
   </tr>
 </table>
 
-
 &nbsp;
 
 ## 📝 KPT 회고
@@ -173,9 +174,9 @@ e.g. style: 홈페이지 스타일링 (#이슈번호)
 - **KEEP**
 
 - **PROBLEM**
-  
+-
 - **TRY**
-  
+
 &nbsp;
 
 ### 🍀 김여진
@@ -183,7 +184,7 @@ e.g. style: 홈페이지 스타일링 (#이슈번호)
 - **KEEP**
 
 - **PROBLEM**
-  
+-
 - **TRY**
 
 &nbsp;
@@ -193,7 +194,7 @@ e.g. style: 홈페이지 스타일링 (#이슈번호)
 - **KEEP**
 
 - **PROBLEM**
-  
+-
 - **TRY**
 
 &nbsp;
@@ -203,5 +204,5 @@ e.g. style: 홈페이지 스타일링 (#이슈번호)
 - **KEEP**
 
 - **PROBLEM**
-  
+-
 - **TRY**
