@@ -71,16 +71,42 @@ npm run dev
 
 ## 📌 우리의 컨벤션
 
-### 파일 컨벤션
+### 네이밍 컨벤션
 
-- 폴더명: lowercase 또는 kebab-case
-- 파일명: PascalCase
+- 폴더명: `kebab-case` → e.g. navigation-bar, server-actions / 최상위 폴더 경로에서 barrel export
+- 파일명:
 
-### 코드 컨벤션
+  - 기본 파일: `camelCase` → e.g. calculate.ts, apiClient.ts
+  - 컴포넌트 파일: `PascalCase` → e.g. Button.tsx, ProductList.tsx
+  - 이미지 파일: `snake_case` → e.g. background_image.png, profile_avatar.svg
 
-- 함수: export default function FunctionName(){}
-- 변수명: camelCase
-- 상수명: UPPER_SNAKE_CASE
+- 변수 및 함수
+  - 함수명: `camelCase` → e.g. fetchProducts(), handleSubmit()
+  - 변수명: `camelCase` → e.g. userName, itemCount
+  - 상수명: UPPER_SNAKE_CASE
+  - 화살표 함수
+
+    - 컴포넌트: 하단에 default export
+
+      ```js
+      const ProductList = () => {
+        return <div>상품 리스트</div>;
+      };
+      ```
+
+    - 여러 가지 함수: 각 함수를 named export
+      ```js
+      export const fetchItems = () => {
+        /* ... */
+      };
+      export const updateUser = () => {
+        /* ... */
+      };
+      ```
+
+  - 컴포넌트
+    컴포넌트명: `PascalCase` → e.g. Header, LoginForm
+    페이지 컴포넌트: `Page 접미사 사용` → e.g. HomePage, CartPage
 
 ### 커밋 컨벤션
 
@@ -98,17 +124,24 @@ e.g. style: 홈페이지 스타일링
 - `comment`: 주석 추가, 삭제, 수정
 
 **정해진 규칙에 따라 자동적으로 코드 스타일을 정리해 코드의 일관성을 유지하고자 했습니다.** <br/>
-**코드 품질 관리는 `eslint`로, 코드 포맷팅은 `prettier`로, 커밋 메시지 관리는 `commitlint`로 했습니다. 팀원들과 소통하여 코딩 컨벤션을 구축했습니다.** <br/>
+**코드 품질 관리는 `eslint`로, 코드 포맷팅은 `prettier`로, 스타일 코드 포맷팅은 `stylelint`로, 커밋 메시지 관리는 `commitlint`로 했습니다. 팀원들과 소통하여 코딩 컨벤션을 구축했습니다.** <br/>
 **그리고 `husky`를 사용해 규칙에 맞지 않으면 커밋을 제한했습니다.** <br/>
 
 ### 브랜치 전략
 
 **main, develop** 브랜치와 **feat** 보조 브랜치를 사용했습니다.
 
+<<<<<<< Updated upstream
+
 - **main**: 배포 단계에서만 사용하는 브랜치
 - **develop**: 개발 단계에서 main 역할을 하는 브랜치
 - **feat**: 기능 단위로 독립적인 개발 환경을 위하여 사용하고 merge 후 각 브랜치를 삭제
-  - feat 브랜치 이름 규칙: `feat/기능명` e.g. feat/admin-login
+  - # feat 브랜치 이름 규칙: `feat/기능명` e.g. feat/admin-login
+- **main**: 배포 가능한 안정적인 상태의 코드를 유지
+- **develop**: 기능 개발이 완료된 코드가 머지되는 브랜치
+- **feat**: 기능 단위로 독립적인 개발 환경을 위하여 사용하고 merge 후 각 브랜치를 삭제 / issue 하나 당-branch 하나, PR 하나
+  - feat 브랜치 이름 규칙: `feat/기능명-이슈번호` e.g. feat/admin-login-12
+    > > > > > > > Stashed changes
 
 &nbsp;
 

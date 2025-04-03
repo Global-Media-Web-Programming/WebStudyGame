@@ -17,10 +17,10 @@ const navigate = (event) => {
   }
 };
 
-function App() {
+export const App = () => {
   window.addEventListener('popstate', Router); //뒤로 가기 또는 앞으로 가기 버튼을 눌렀을 때 페이지를 렌더링함
   document.body.addEventListener('click', navigate); //navBar의 링크를 클릭할 때 이동 처리
   Router(); // 초기 로드 시 렌더링
-}
+};
 
 document.addEventListener('DOMContentLoaded', App);
