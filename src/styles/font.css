@@ -24,3 +24,10 @@
     url('/fonts/Pretendard-Bold.woff2') format('woff2'),
     url('/fonts/Pretendard-Bold.woff') format('woff');
 }
+
+@font-face {
+  font-family: Lancelot;
+  font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/Lancelot-Regular.ttf') format('ttf');
+}
