@@ -1,13 +1,14 @@
 @import url('./reset.css');
 
 :root {
-  --css-variable: #000000;
+  --color-black: #010019;
+  --color-purple: #6659f5;
+  --color-yellow: #cb8802;
 }
 
 body {
   margin: 0 auto;
   font-family: Pretendard, sans-serif;
   font-weight: 500;
-  font-optical-sizing: auto; /* 가변 글꼴에서 글자 더 읽기 쉽게 만듦 */
   word-break: keep-all;
 }
