@@ -1,8 +1,7 @@
 import Component from '../../core/Component';
 import styles from './Layout.module.css';
 import ROUTES from '../../constants/routes';
-import MENU_BAR from '/src/assets/img/menu.svg';
-import routes from '../../router/routes';
+import MENU_BAR from '/src/assets/img/icon/menu.svg';
 
 class Layout extends Component {
   template() {
@@ -37,8 +36,10 @@ class Layout extends Component {
               <a href="${ROUTES.MAIN}" class="${styles.logoSmall}">CODE NEWS</a>
               <img src="${MENU_BAR}" alt="menu icon"/>
             </div>
-            <div class="${styles.gameNavLine}"></div>
-            <div class="${styles.gameNavLine}"></div>
+            <div class="${styles.gameNavLines}">
+              <div class="${styles.gameNavLine}"></div>
+              <div class="${styles.gameNavLine}"></div>
+            </div>
           </header>
           <section id="page-root" class="${styles.pageRoot}"></section>
         </main class="${styles.container}">
@@ -47,12 +48,12 @@ class Layout extends Component {
   }
 
   mounted() {
-    const { matched } = this.props;
-    const Page = routes[matched] || routes[ROUTES.NOT_FOUND];
-
+    const { Page, params } = this.props;
     const pageRoot = document.querySelector('#page-root');
 
-    new Page(pageRoot);
+    if (!Page || !pageRoot) return;
+
+    new Page(pageRoot, params);
   }
 }
 

@@ -44,8 +44,9 @@ export default class Component {
   addEvent(eventType, selector, callback) {
     this.$el.addEventListener(eventType, (event) => {
       const target = event.target.closest(selector);
-      if (!target) return;
-      callback(event);
+      if (target) {
+        callback(event);
+      }
     });
   }
 }

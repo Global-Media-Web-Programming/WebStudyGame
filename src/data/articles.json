@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "html 개요",
+    "image": "/src/assets/img/article/html.webp",
+    "writer": "박민지",
+    "createdAt": "2025-04-07",
+    "content": "<p>HTML은 웹 페이지의 뼈대를 구성하는 마크업 언어입니다.</p><p>이 글에서는 HTML의 기본 구조와 사용법을 소개합니다.</p>"
+  },
+  {
+    "id": 2,
+    "title": "CSS Flexbox, Grid 완전 정복",
+    "image": "/src/assets/img/article/css.webp",
+    "writer": "김여진",
+    "createdAt": "2025-03-28",
+    "content": "<p>Flexbox는 요소의 정렬과 배치를 효율적으로 도와주는 CSS 모듈입니다.</p><p>이번 글에서는 다양한 레이아웃 예제와 함께 Flexbox의 핵심 개념을 설명합니다.</p>"
+  },
+  {
+    "id": 3,
+    "title": "CSS Flexbox, Grid 완전 정복",
+    "image": "/src/assets/img/article/html.webp",
+    "writer": "김여진",
+    "createdAt": "2025-03-28",
+    "content": "<p>Flexbox는 요소의 정렬과 배치를 효율적으로 도와주는 CSS 모듈입니다.</p><p>이번 글에서는 다양한 레이아웃 예제와 함께 Flexbox의 핵심 개념을 설명합니다.</p>"
+  },
+  {
+    "id": 4,
+    "title": "CSS Flexbox, Grid 완전 정복",
+    "image": "/src/assets/img/article/css.webp",
+    "writer": "김여진",
+    "createdAt": "2025-03-28",
+    "content": "<p>Flexbox는 요소의 정렬과 배치를 효율적으로 도와주는 CSS 모듈입니다.</p><p>이번 글에서는 다양한 레이아웃 예제와 함께 Flexbox의 핵심 개념을 설명합니다.</p>"
+  },
+  {
+    "id": 5,
+    "title": "CSS Flexbox, Grid 완전 정복",
+    "image": "/src/assets/img/article/html.webp",
+    "writer": "김여진",
+    "createdAt": "2025-03-28",
+    "content": "<p>Flexbox는 요소의 정렬과 배치를 효율적으로 도와주는 CSS 모듈입니다.</p><p>이번 글에서는 다양한 레이아웃 예제와 함께 Flexbox의 핵심 개념을 설명합니다.</p>"
+  }
+]

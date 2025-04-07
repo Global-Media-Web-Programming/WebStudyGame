@@ -9,8 +9,6 @@ export default class Button extends Component {
      */
     const { color = 'purple', shadow = false, text = '' } = this.props;
 
-    console.log(this.props);
-
     return `
       <button class="${styles.button} ${styles[color]} ${shadow ? styles.shadow : ''}">
         ${text}

@@ -1,5 +1,23 @@
+.container {
+  display: flex;
+  gap: 40px;
+  padding: 20px 30px;
+}
+
+.latestSection {
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  gap: 10px;
+  width: 360px; /* article 너비 + 여유공간 */
+  height: 100vh;
+  padding-right: 10px; /* 스크롤바 공간 확보 */
+  overflow-y: auto;
+}
+
 .gameSection {
   display: flex;
+  flex: 1;
   flex-direction: column;
-  gap: 30px;
+  gap: 40px;
 }

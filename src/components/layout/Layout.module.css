@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-image: url('/src/assets/img/unsplash.svg');
+  background-image: url('/src/assets/img/background/unsplash.svg');
   background-size: cover;
 }
 
@@ -19,6 +19,7 @@
   font-family: 'Times New Roman', sans-serif;
   font-size: 60px;
   font-weight: 700;
+  line-height: 86px;
   color: #dfd5b4;
   text-decoration: none;
 }
@@ -45,6 +46,45 @@
 
 .nav a.active {
   color: #f6c25c;
+}
+
+/* ====== 게임 페이지 ====== */
+.gameHeader {
+  padding: 20px 10px;
+}
+
+.gameNavBoldLine {
+  width: 100%;
+  height: 4px;
+  background-color: #ffffff;
+}
+
+.gameNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.logoSmall {
+  font-family: 'Times New Roman', sans-serif;
+  font-size: 33px;
+  font-weight: 700;
+  line-height: 86px;
+  color: #dfd5b4;
+  text-decoration: none;
+}
+
+.gameNavLines {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.gameNavLine {
+  width: 100%;
+  height: 1px;
+  background-color: #ffffff;
 }
 
 .pageRoot {

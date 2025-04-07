@@ -1,14 +1,12 @@
 const ROUTES = {
   MAIN: '/',
   GAMES: '/games',
-  HTML_GAMES: '/games/html/:gameId',
-  CSS_GAMES: '/games/css/:gameId',
-  HTML_GAME_RESULT: '/games/html/result',
-  CSS_GAME_RESULT: '/games/css/result',
+  GAME: '/games/:language/:id',
+  GAME_RESULT: '/games/:language/result',
   LEARN: '/learn',
-  LEARN_DETAIL: '/learn/:learnId',
+  LEARN_DETAIL: '/learn/:id',
   ARTICLE: '/article',
-  ARTICLE_DETAIL: '/article/:articleId',
+  ARTICLE_DETAIL: '/article/:id',
   NOT_FOUND: '*',
 };
 

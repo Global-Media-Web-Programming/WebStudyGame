@@ -1,49 +1,37 @@
-// import Component from '../../core/Component';
-// import styles from './LatestItems.module.css';
+import Component from '../../core/Component';
+import styles from './LatestItems.module.css';
+import articles from '../../data/articles.json';
+import navigate from '../../utils/navigate';
 
-// class LatestItem extends Component {
-//   template() {
-//     return `
-//       <article class="${styles.container}">
-//         ${imgPos === 'left' ? thumbnailImg : ''}
-//         <div class="${styles.infoSection}">
-//           <div class="${styles.infoHeader}">
-//             <div class="${styles.infoHeaderRow}">
-//               <div class="${styles.summary}">
-//                 ${summaryData
-//                   .map(
-//                     ({ icon, label }) => `
-//                     <div class="${styles.summaryItem}">
-//                       <img src="${icon}" alt="${label}-icon" class="${styles.summaryIcon}"/>
-//                       <span>${label}</span>
-//                     </div>
-//                   `
-//                   )
-//                   .join('')}
-//               </div>
-//               <div id="button">해결하기</div>
-//             </div>
-//             <h2 class="${styles.language}">${language}</h2>
-//           </div>
+export default class LatestItems extends Component {
+  template() {
+    return `
+      <h2 class="${styles.latestTitle}">최신 소식</h2>
+      <section class="${styles.container}">
+      </section>
+    `;
+  }
 
-//           <p class="${styles.description}">${language === 'html' ? GAME_DESCRIPTION.HTML : GAME_DESCRIPTION.CSS}</p>
-//         </div>
-//         ${imgPos !== 'left' ? thumbnailImg : ''}
-//       </article>
-//     `;
-//   }
-//   // <img src="" alt="${language}-img" class="${imgPos === 'left' ? styles.left : ''}"></img>
+  mounted() {
+    const container = this.$el.querySelector(`.${styles.container}`);
 
-// }
+    articles.forEach(({ id, title, image }) => {
+      const articleEl = document.createElement('article');
+      articleEl.className = styles.article;
+      articleEl.dataset.id = id;
+      articleEl.innerHTML = `
+        <img src="${image}" alt="${title}-thumbnail" class="${styles.img}" />
+      `;
 
-// export default class LatestItems extends Component {
-//   template() {
-//     return `
+      container.appendChild(articleEl);
+    });
+  }
 
-//     `;
-//   }
-//   mouted() {
-//     const btnEl = this.$el.querySelector('#button');
-//     new Button(btnEl);
-//   }
-// }
+  setEvent() {
+    this.addEvent('click', `.${styles.article}`, (e) => {
+      const articleEl = e.target.closest(`.${styles.article}`);
+      const articleId = articleEl.dataset.id;
+      navigate(`/article/${articleId}`);
+    });
+  }
+}

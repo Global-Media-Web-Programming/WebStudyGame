@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "title": "사라진 제목",
+    "description": "웹 페이지에 제목이 표시되어야 하지만 보이지 않는다.\n코드를 확인하고 올바른 제목 태그를 추가해라!",
+    "hint": "제목 태그가 빠져 있다!",
+    "bugCode": "<p>웹 개발을 배워보자!</p>",
+    "answer": "<h1>웹 개발을 배워보자!</h1>"
+  },
+  {
+    "id": 2,
+    "title": "로그인 폼이 작동하지 않는다!",
+    "description": "사용자가 아이디와 비밀번호를 입력한 후,\n'로그인' 버튼을 눌러야 하는데 버튼을 클릭해도 아무런 동작이 없다.",
+    "hint": "form 태그에 action 속성이 누락됨!",
+    "bugCode": "<form>\n<input type=\"text\" placeholder=\"아이디\">\n<input type=\"password\" placeholder=\"비밀번호\">\n<button>로그인</button>\n</form>",
+    "answer": "<form action=\"login.php\">\n<input type=\"text\" placeholder=\"아이디\">\n<input type=\"password\" placeholder=\"비밀번호\">\n<button>로그인</button>\n</form>"
+  }
+]

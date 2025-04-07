@@ -1,11 +1,13 @@
 .container {
   display: flex;
   gap: 27px;
-  padding: 10px 0;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .infoSection {
   display: flex;
+  flex: 1;
   flex-direction: column;
   gap: 40px;
   border-bottom: solid 2px #d9d9d9;
@@ -56,8 +58,26 @@
   white-space: pre-line;
 }
 
-.tumbnailImg {
-  flex: 1;
-  max-width: 391px;
-  background: rgba(217, 217, 217, 20%);
+.imgWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 391px;
+  height: 314px;
+  overflow: hidden;
+
+  /* background-color: red; */
+}
+
+.img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (width <= 1024px) {
+  .imgWrapper {
+    display: none;
+  }
 }
