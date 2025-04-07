@@ -1,10 +1,10 @@
 import ROUTES from '../constants/routes';
-import Main from '../pages/Main';
-import NotFound from '../pages/NotFound';
+import MainPage from '../pages/main/MainPage';
+import NotFoundPage from '../pages/not-found/NotFoundPage';
 
 const routes = {
-  [ROUTES.MAIN]: Main,
-  [ROUTES.NOT_FOUND]: NotFound,
+  [ROUTES.MAIN]: MainPage,
+  [ROUTES.NOT_FOUND]: NotFoundPage,
   // games
 };
 

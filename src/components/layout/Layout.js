@@ -1,5 +1,5 @@
 import Component from '../../core/Component';
-import style from './Layout.module.css';
+import styles from './Layout.module.css';
 import ROUTES from '../../constants/routes';
 import MENU_BAR from '/src/assets/img/menu.svg';
 import routes from '../../router/routes';
@@ -9,35 +9,39 @@ class Layout extends Component {
     const { matched, isGamePage } = this.props;
 
     const navItem = (href, text) => {
-      const isActive = matched === href ? style.active : '';
+      const isActive = matched === href ? styles.active : '';
       return `<a href="${href}" class="${isActive}">${text}</a>`;
     };
 
     if (!isGamePage) {
       return `
-        <header class="${style.header}">
-          <a href="${ROUTES.MAIN}" class="${style.logo}">CODE NEWS</a>
-          <div class="${style.navLine}"></div>
-          <nav class="${style.nav}">
-            ${navItem(ROUTES.GAMES, 'GAMES')}
-            ${navItem(ROUTES.LEARN, 'LEARN')}
-            ${navItem(ROUTES.ARTICLE, 'ARTICLE')}
-          </nav>
-        </header>
-        <main id="page-root" class="${style.pageRoot}"></main>
+        <main class="${styles.container}">
+          <header class="${styles.header}">
+            <a href="${ROUTES.MAIN}" class="${styles.logo}">CODE NEWS</a>
+            <div class="${styles.navLine}"></div>
+            <nav class="${styles.nav}">
+              ${navItem(ROUTES.GAMES, 'GAMES')}
+              ${navItem(ROUTES.LEARN, 'LEARN')}
+              ${navItem(ROUTES.ARTICLE, 'ARTICLE')}
+            </nav>
+          </header>
+          <section id="page-root" class="${styles.pageRoot}"></section>
+        </main>
       `;
     } else {
       return `
-        <header class="${style.gameHeader}">
-          <div class="${style.gameNavBoldLine}"></div>
-          <div class="${style.gameNav}">
-            <a href="${ROUTES.MAIN}" class="${style.logoSmall}">CODE NEWS</a>
-            <img src="${MENU_BAR}" alt="menu icon"/>
-          </div>
-          <div class="${style.gameNavLine}"></div>
-          <div class="${style.gameNavLine}"></div>
-        </header>
-        <main id="page-root" class="${style.pageRoot}"></main>
+        <main class="${styles.container}">
+          <header class="${styles.gameHeader}">
+            <div class="${styles.gameNavBoldLine}"></div>
+            <div class="${styles.gameNav}">
+              <a href="${ROUTES.MAIN}" class="${styles.logoSmall}">CODE NEWS</a>
+              <img src="${MENU_BAR}" alt="menu icon"/>
+            </div>
+            <div class="${styles.gameNavLine}"></div>
+            <div class="${styles.gameNavLine}"></div>
+          </header>
+          <section id="page-root" class="${styles.pageRoot}"></section>
+        </main class="${styles.container}">
       `;
     }
   }
@@ -45,8 +49,6 @@ class Layout extends Component {
   mounted() {
     const { matched } = this.props;
     const Page = routes[matched] || routes[ROUTES.NOT_FOUND];
-
-    console.log(document.querySelector('#app'));
 
     const pageRoot = document.querySelector('#page-root');
 

@@ -73,7 +73,7 @@ npm run dev
 
 ### 네이밍 컨벤션
 
-- 폴더명: `kebab-case` → e.g. navigation-bar, server-actions / 최상위 폴더 경로에서 barrel export
+- 폴더명: `kebab-case` → e.g. navigation-bar, server-actions
 - 파일명:
 
   - 기본 파일: `camelCase` → e.g. calculate.ts, apiClient.ts

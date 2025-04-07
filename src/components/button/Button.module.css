@@ -1,0 +1,30 @@
+.button {
+  display: flex;
+  flex: 1 0 0;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: center;
+  border: none;
+  border-radius: 3px;
+}
+
+.purple {
+  background-color: var(--color-purple);
+}
+
+.yellow {
+  background-color: var(--color-yellow);
+}
+
+.noShadow {
+  box-shadow: none;
+}
+
+.shadow {
+  color: #dfdfdf;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 25%);
+}

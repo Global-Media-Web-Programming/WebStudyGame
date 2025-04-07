@@ -1,14 +1,22 @@
 @import url('./reset.css');
 
 :root {
-  --color-black: #010019;
+  --color-background: #010019;
   --color-purple: #6659f5;
   --color-yellow: #cb8802;
 }
 
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+}
+
 body {
-  margin: 0 auto;
   font-family: Pretendard, sans-serif;
   font-weight: 500;
+  color: #ffffff;
   word-break: keep-all;
+  background-color: #222033;
 }
