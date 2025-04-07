@@ -81,6 +81,7 @@ npm run dev
   - 이미지 파일: `snake_case` → e.g. background_image.png, profile_avatar.svg
 
 - 변수 및 함수
+
   - 함수명: `camelCase` → e.g. fetchProducts(), handleSubmit()
   - 변수명: `camelCase` → e.g. userName, itemCount
   - 상수명: UPPER_SNAKE_CASE
@@ -106,7 +107,7 @@ npm run dev
 
   - 컴포넌트
     컴포넌트명: `PascalCase` → e.g. Header, LoginForm
-    페이지 컴포넌트: `Page 접미사 사용` → e.g. HomePage, CartPage
+    페이지 컴포넌트: `Page 접미사 사용` → e.g. MainPage, CartPage
 
 ### 커밋 컨벤션
 

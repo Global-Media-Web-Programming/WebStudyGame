@@ -1,0 +1,36 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.logo {
+  font-family: 'Times New Roman', sans-serif;
+  font-weight: 700;
+  color: #dfd5b4;
+}
+
+.navLine {
+  width: 100%;
+  color: #ffffff;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav a {
+  padding: 10px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.nav a.active {
+  font-weight: bold;
+  color: #f6c25c;
+}
+
+.pageRoot {
+  flex: 1;
+}
