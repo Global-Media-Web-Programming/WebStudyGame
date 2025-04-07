@@ -1,12 +1,12 @@
 @font-face {
-  font-family: TimesNewRoman;
+  font-family: 'Times New Roman';
   font-style: normal;
   font-weight: 400;
   src: url('/fonts/otf/TimesNewerRoman-Bold.otf') format('opentype');
 }
 
 @font-face {
-  font-family: TimesNewRoman;
+  font-family: 'Times New Roman';
   font-style: normal;
   font-weight: 700;
   src: url('/fonts/otf/TimesNewerRoman-Bold.otf') format('opentype');

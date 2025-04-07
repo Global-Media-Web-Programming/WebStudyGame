@@ -1,0 +1,114 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: url('/src/assets/img/background/unsplash.svg');
+  background-size: cover;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-background);
+}
+
+.logo {
+  padding: 30px;
+  font-family: 'Times New Roman', sans-serif;
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 86px;
+  color: #dfd5b4;
+  text-decoration: none;
+}
+
+.navLine {
+  width: 100%;
+  height: 2px;
+  background-color: #343347;
+}
+
+.nav {
+  display: flex;
+  gap: 30px;
+  padding: 10px;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 18px;
+}
+
+.nav a {
+  padding: 10px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.nav a.active {
+  color: #f6c25c;
+}
+
+/* ====== 게임 페이지 ====== */
+.gameHeader {
+  padding: 20px 10px;
+}
+
+.gameNavBoldLine {
+  width: 100%;
+  height: 4px;
+  background-color: #ffffff;
+}
+
+.gameNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.logoSmall {
+  font-family: 'Times New Roman', sans-serif;
+  font-size: 33px;
+  font-weight: 700;
+  line-height: 86px;
+  color: #dfd5b4;
+  text-decoration: none;
+}
+
+.gameNavLines {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.gameNavLine {
+  width: 100%;
+  height: 1px;
+  background-color: #ffffff;
+}
+
+.pageRoot {
+  flex: 1;
+}
+
+@media (width <= 768px) {
+  .logo {
+    padding: 20px;
+    font-size: 40px;
+  }
+
+  .nav {
+    gap: 20px;
+    padding: 5px;
+  }
+}
+
+@media (width <= 480px) {
+  .logo {
+    font-size: 20px;
+  }
+
+  .nav {
+    font-size: 10px;
+  }
+}

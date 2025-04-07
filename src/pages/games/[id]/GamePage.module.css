@@ -1,0 +1,17 @@
+.editorContainer {
+  display: flex;
+  gap: 20px;
+}
+
+.codeEditor {
+  width: 50%;
+  height: 300px;
+  font-family: monospace;
+  font-size: 14px;
+}
+
+.codePreview {
+  width: 50%;
+  height: 300px;
+  border: 1px solid #cccccc;
+}
