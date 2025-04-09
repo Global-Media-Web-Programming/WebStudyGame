@@ -105,7 +105,7 @@ export default class GameTumbnail extends Component {
         new Button(btnEl, {
           id: 'html-game-btn',
           text: '수첩 보기',
-          callback: () => {
+          onClick: () => {
             navigate(BUILD_ROUTES.GAME_RESULT('html'));
           },
         });
@@ -113,7 +113,7 @@ export default class GameTumbnail extends Component {
         new Button(btnEl, {
           id: 'html-game-btn',
           text: '해결하기',
-          callback: () => {
+          onClick: () => {
             navigate(BUILD_ROUTES.GAME('html', 1));
           },
         });
@@ -123,7 +123,7 @@ export default class GameTumbnail extends Component {
         new Button(btnEl, {
           id: 'css-game-btn',
           text: '수첩 보기',
-          callback: () => {
+          onClick: () => {
             navigate(BUILD_ROUTES.GAME_RESULT('css'));
           },
         });
@@ -131,7 +131,7 @@ export default class GameTumbnail extends Component {
         new Button(btnEl, {
           id: 'css-game-btn',
           text: '해결하기',
-          callback: () => {
+          onClick: () => {
             navigate(BUILD_ROUTES.GAME('css', 1));
           },
         });
