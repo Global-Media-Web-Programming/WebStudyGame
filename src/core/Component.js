@@ -6,6 +6,7 @@ export default class Component {
     this.props = props;
     this.state = observable(this.initState());
 
+    // state가 바뀌면 자동 렌더
     observe(() => {
       this.render();
     });

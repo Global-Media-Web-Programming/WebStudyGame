@@ -1,14 +1,14 @@
 import Component from '../../core/Component';
 import styles from './Layout.module.css';
-import ROUTES from '../../constants/routes';
+import { ROUTES } from '../../constants/routes';
 import MENU_BAR from '/src/assets/img/icon/menu.svg';
 
 class Layout extends Component {
   template() {
-    const { matched, isGamePage } = this.props;
+    const { path, isGamePage } = this.props;
 
     const navItem = (href, text) => {
-      const isActive = matched === href ? styles.active : '';
+      const isActive = path === href ? styles.active : '';
       return `<a href="${href}" class="${isActive}">${text}</a>`;
     };
 

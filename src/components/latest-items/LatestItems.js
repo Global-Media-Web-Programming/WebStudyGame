@@ -2,6 +2,7 @@ import Component from '../../core/Component';
 import styles from './LatestItems.module.css';
 import articles from '../../data/articles.json';
 import navigate from '../../utils/navigate';
+import { BUILD_ROUTES } from '../../constants/routes';
 
 export default class LatestItems extends Component {
   template() {
@@ -31,7 +32,7 @@ export default class LatestItems extends Component {
     this.addEvent('click', `.${styles.article}`, (e) => {
       const articleEl = e.target.closest(`.${styles.article}`);
       const articleId = articleEl.dataset.id;
-      navigate(`/article/${articleId}`);
+      navigate(BUILD_ROUTES.ARTICLE_DETAIL(articleId));
     });
   }
 }
