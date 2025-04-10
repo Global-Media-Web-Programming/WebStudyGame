@@ -6,6 +6,7 @@ import { GAME_DESCRIPTION } from '../../constants/game';
 import Component from '../../core/Component';
 import Button from '../button/Button';
 import { BUILD_ROUTES } from '../../constants/routes';
+
 import CODE_FILE from '/src/assets/img/icon/code-file.svg';
 import FOOTSTEPS from '/src/assets/img/icon/footsteps.svg';
 import RESOLVED from '/src/assets/img/icon/footsteps.svg';
