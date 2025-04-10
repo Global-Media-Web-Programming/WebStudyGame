@@ -1,4 +1,4 @@
-const ROUTES = {
+export const ROUTES = {
   MAIN: '/',
   GAMES: '/games',
   GAME: '/games/:language/:id',
@@ -10,4 +10,10 @@ const ROUTES = {
   NOT_FOUND: '*',
 };
 
-export default ROUTES;
+// 동적 경로를 생성할 때 사용
+export const BUILD_ROUTES = {
+  GAME: (language, id) => `/games/${language}/${id}`,
+  GAME_RESULT: (language) => `/games/${language}/result`,
+  LEARN_DETAIL: (id) => `/learn/${id}`,
+  ARTICLE_DETAIL: (id) => `/article/${id}`,
+};
