@@ -1,6 +1,24 @@
 .editorContainer {
   display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 0 30px;
+}
+
+.gameHeader {
+  display: flex;
   gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 14px;
+  border-bottom: solid 4px rgba(255, 255, 255, 80%);
+}
+
+.btnContainer {
+  display: flex;
+  gap: 20px;
+  align-items: center;
 }
 
 .codeEditor {
@@ -13,4 +31,10 @@
   width: 50%;
   height: 300px;
   border: 1px solid #cccccc;
+}
+
+@media (width <= 768px) {
+  .editorContainer {
+    padding: 0 10px;
+  }
 }

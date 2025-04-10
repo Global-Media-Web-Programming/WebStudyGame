@@ -1,10 +1,9 @@
-import styles from './GameHeader.module.css';
+import styles from './GameLanguage.module.css';
 import Component from '../../../core/Component';
 
-export default class GameHeader extends Component {
+export default class GameLanguage extends Component {
   template() {
     const { language } = this.props;
-    console.log('language from GamePage', language);
     const languageIcon = language === 'html' ? '< />' : '{ }';
     return `
       <div class="${styles.container}">

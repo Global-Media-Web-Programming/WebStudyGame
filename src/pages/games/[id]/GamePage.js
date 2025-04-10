@@ -1,12 +1,18 @@
 import Component from '../../../core/Component';
 import styles from './GamePage.module.css';
-import GameHeader from '../../../components/games/game-header/GameHeader';
+import GameLanguage from '../../../components/games/game-language/GameLanguage';
 
 export default class GamePage extends Component {
   template() {
     return `
       <div class="${styles.editorContainer}">
-        <div id="game-header"></div>
+        <div class="${styles.gameHeader}">
+          <div id="game-language"></div>
+          <div class="${styles.btnContainer}">
+            <div id="hint-btn"></div>
+            <div id="next-btn"></div>
+          </div>
+        </div>
         <textarea id="code-editor" class="${styles.codeEditor}"></textarea>
         <iframe id="code-preview" class="${styles.codePreview}" sandbox="allow-scripts"></iframe>
       </div>
@@ -17,11 +23,11 @@ export default class GamePage extends Component {
     const { $el } = this;
     const { language } = this.props;
 
-    const gameHeaderEl = $el.querySelector('#game-header');
-    new GameHeader(gameHeaderEl, { language });
+    const gameLangEl = $el.querySelector('#game-language');
+    new GameLanguage(gameLangEl, { language });
 
-    const textarea = document.getElementById('code-editor');
-    const iframe = document.getElementById('code-preview');
+    const textarea = $el.querySelector('#code-editor');
+    const iframe = $el.querySelector('#code-preview');
 
     const initialCode = `
       <style>
