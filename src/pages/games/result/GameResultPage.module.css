@@ -1,3 +1,116 @@
 .container {
+  padding: 40px;
+  font-family: Pretendard, sans-serif;
+  line-height: 1.6;
+  color: #f0f0f0;
+}
+
+.title {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  color: #ffffff;
+}
+
+.subtitle {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.description {
+  margin-bottom: 30px;
+  font-size: 16px;
+  color: #cccccc;
+}
+
+.noteBox {
+  padding: 25px;
+  background: rgba(255, 255, 255, 5%);
+  border-radius: 10px;
+}
+
+.date {
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #aaaaaa;
+}
+
+.sectionTitle {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.tagList {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.tagList li {
+  margin-bottom: 8px;
+}
+
+.tip {
+  font-size: 14px;
+  color: #dddddd;
+}
+
+.tagList li code {
+  font-weight: bold;
+  color: #90caf9;
+}
+
+.sectionTitle span {
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.codeExample {
+  padding: 15px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #ffffff;
+  white-space: pre-line;
+  background-color: rgba(255, 255, 255, 8%);
+  border-radius: 5px;
+}
+
+.codeTag {
+  font-weight: bold;
+  color: #f48fb1;
+}
+
+.description strong {
   font-weight: 700;
+  color: #ffffff;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.labelLine {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.icon {
+  font-family: monospace;
+  font-size: 13px;
+  color: #f44336;
+}
+
+.label {
+  font-size: 13px;
+  color: #cccccc;
+}
+
+.divider {
+  height: 2px;
+  background-color: #aaaaaa;
+  border: none;
+  opacity: 50%;
 }
