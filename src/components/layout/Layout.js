@@ -2,6 +2,7 @@ import Component from '../../core/Component';
 import styles from './Layout.module.css';
 import { ROUTES } from '../../constants/routes';
 import MENU_BAR from '/src/assets/img/icon/menu.svg';
+import MenuBar from '../menu-bar/MenuBar';
 
 class Layout extends Component {
   template() {
@@ -54,6 +55,17 @@ class Layout extends Component {
     if (!Page || !pageRoot) return;
 
     new Page(pageRoot, params);
+
+    // MenuBar 컴포넌트 생성 및 DOM에 추가
+    const menuBarContainer = document.createElement('div');
+    document.body.appendChild(menuBarContainer); // MenuBar를 body에 추가
+    const menuBar = new MenuBar(menuBarContainer);
+
+    // MENU_BAR 아이콘 클릭 이벤트
+    const menuIcon = document.querySelector(`.${styles.gameNav} img`);
+    menuIcon.addEventListener('click', () => {
+      menuBar.openMenu();
+    });
   }
 }
 

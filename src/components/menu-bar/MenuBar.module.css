@@ -1,0 +1,105 @@
+.shadow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 998;
+  display: none; /* 기본적으로 숨김 */
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 50%); /* 반투명 배경 */
+}
+
+.shadow.open {
+  display: block; /* 열림 상태일 때 보이도록 설정 */
+}
+
+.menuBar {
+  position: fixed;
+  top: 0;
+  right: -500px; /* 기본적으로 화면 밖에 숨김 */
+  z-index: 1000;
+  width: 500px;
+  height: 100%;
+  padding-top: 40px;
+  color: white;
+  background-color: #161520;
+}
+
+@keyframes slideIn {
+  from {
+    right: -500px;
+  }
+
+  to {
+    right: 0;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    right: 0;
+  }
+
+  to {
+    right: -500px;
+  }
+}
+
+.menuBar.open {
+  right: 0; /* 메뉴바가 열릴 때 화면 안으로 들어옴 */
+  animation: slideIn 0.5s ease-in-out;
+}
+
+.menuBar.close {
+  right: -500px; /* 메뉴바가 닫힐 때 화면 밖으로 나감 */
+  animation: slideOut 0.5s ease-in-out;
+}
+
+.closeBtn {
+  margin-bottom: 30px;
+  margin-left: 40px;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.divider {
+  width: 450px;
+  margin: 0 auto;
+  margin-bottom: 16px;
+  border: none;
+  border-bottom: 1px solid #d7d6dc; /* 구분선 스타일 */
+}
+
+.menuList {
+  padding: 60px 0 0;
+  list-style: none;
+}
+
+.menuList li {
+  margin: 0 0 27px;
+}
+
+.menuList li a {
+  font-size: 26px;
+  color: white;
+  text-decoration: none;
+}
+
+.menuItem {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  padding-left: 66px;
+}
+
+.menuItem:hover {
+  cursor: pointer;
+  background-color: #252337;
+  border-left: 6px solid #d9d9d9;
+}
