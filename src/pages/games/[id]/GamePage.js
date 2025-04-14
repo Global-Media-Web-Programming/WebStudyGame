@@ -1,6 +1,8 @@
 import Component from '../../../core/Component';
 import styles from './GamePage.module.css';
 import GameLanguage from '../../../components/games/game-language/GameLanguage';
+import Button from '../../../components/button/Button';
+import Hint from '../../../components/hint/Hint';
 import parseHTML from '../../../utils/parseHtml';
 import compareDOM from '../../../utils/compareDom';
 
@@ -20,6 +22,7 @@ export default class GamePage extends Component {
         </div>
         <textarea id="code-editor" class="${styles.codeEditor}"></textarea>
         <iframe id="code-preview" class="${styles.codePreview}" sandbox="allow-scripts"></iframe>
+        <div id="hint"></div>
       </div>
     `;
   }
@@ -30,6 +33,23 @@ export default class GamePage extends Component {
 
     const gameLangEl = $el.querySelector('#game-language');
     new GameLanguage(gameLangEl, { language });
+
+    const hintBtnEl = $el.querySelector('#hint-btn');
+    const hintEl = $el.querySelector('#hint');
+    new Button(hintBtnEl, {
+      id: 'html-game-btn',
+      text: '힌트 보기',
+      color: 'yellow',
+      onClick: () => {
+        new Hint(hintEl, {
+          content: '`<form>` 태그 안에 `<button>` 태그가 누락됨!',
+          onClose: () => {
+            hintEl.innerHTML = '';
+          },
+          closeBtnText: '닫기',
+        });
+      },
+    });
 
     const textarea = $el.querySelector('#code-editor');
     const iframe = $el.querySelector('#code-preview');
