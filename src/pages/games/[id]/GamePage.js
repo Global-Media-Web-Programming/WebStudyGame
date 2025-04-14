@@ -42,11 +42,8 @@ export default class GamePage extends Component {
       color: 'yellow',
       onClick: () => {
         new Hint(hintEl, {
-          content: '`<form>` 태그 안에 `<button>` 태그가 누락됨!',
-          onClose: () => {
-            hintEl.innerHTML = '';
-          },
-          closeBtnText: '닫기',
+          content:
+            '`value` 속성을 `placeholder` 처럼 잘못 사용함 (입력 불가능하게 됨)',
         });
       },
     });

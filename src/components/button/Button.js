@@ -25,10 +25,7 @@ export default class Button extends Component {
     return `
       <button 
         data-button-id="${id}" 
-        class="${styles.button} 
-        ${styles[color]} 
-        ${shadow ? styles.shadow : ''} 
-        ${disabled ? styles.disabled : ''}" 
+        class="${styles.button} ${styles[color]} ${shadow ? styles.shadow : ''} ${disabled ? styles.disabled : ''}"
       >
         ${text}
       </button>

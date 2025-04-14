@@ -11,10 +11,18 @@ import Button from '../button/Button';
 export default class Hint extends Component {
   template() {
     const { content } = this.props;
+    const escapedContent = content
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;')
+      .replace(/`([^`]+)`/g, `<span class="${styles.keyword}">$1</span>`);
+
     return `
-      <div class="${styles.modalOverlay}">
-        <div class="${styles.modalContent}">
-          ${content}
+      <div class="${styles.overlay}">
+        <div class="${styles.content}">
+          <p>${escapedContent}</p>
           <div id="close-btn" class="${styles.closeBtn}"></div>
         </div>
       </div>
@@ -27,7 +35,7 @@ export default class Hint extends Component {
     const defaultOnClose = () => ($el.innerHTML = '');
 
     const closeButtonEl = $el.querySelector('#close-btn');
-    const overlayEl = $el.querySelector(`.${styles.modalOverlay}`);
+    const overlayEl = $el.querySelector(`.${styles.overlay}`);
 
     new Button(closeButtonEl, {
       id: 'modal-close-btn',
@@ -36,7 +44,7 @@ export default class Hint extends Component {
         defaultOnClose();
       },
       color: 'purple',
-      text: this.props.closeBtnText,
+      text: '확인',
     });
 
     document.addEventListener('keydown', (e) => {

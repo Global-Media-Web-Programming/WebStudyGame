@@ -43,7 +43,7 @@
     "id": 6,
     "title": "링크가 클릭되지 않는다!",
     "description": "웹 페이지에서 \"페이지 이동\"이라는 문구를 클릭해도 아무 반응이 없다.\n코드를 확인하고, 링크가 정상 작동하도록 수정하라.\n(다음 페이지의 주소는 #로 작성해라)",
-    "hint": "href 속성이 빠져 있음!",
+    "hint": "`href` 속성이 빠져 있음!",
     "bugCode": "<a>페이지 이동</a>",
     "answer": "<a href=\"#\">페이지 이동</a>"
   },
@@ -59,10 +59,10 @@
     "id": 8,
     "title": "버튼 색이 바뀌지 않는다!",
     "description": "버튼을 강조하기 위해 빨간색 배경을 적용하려고 했지만,\n웹 페이지에선 여전히 파란색 버튼이 보인다.\nCSS는 제대로 연결되어 있으며 문법 오류도 없다.\n**HTML 구조와 선택자 우선순위를 고려하여 문제를 해결하라.**",
-    "hint": "`href=\"style.css\"` 가 없어 css 파일이 아직 연결되지 않았다\n- CSS는 `id` 선택자 `#delete-btn`에 빨간색 스타일을 지정했지만\n- 실제 HTML에서는 `id=\"delete-btn\"`가 빠져 있어서 적용되지 않음\n- `btn` 클래스 선택자가 우선됨",
-    "bugCode": "<!DOCTYPE html>\n<html>\n  <head>\n    <link rel=\"stylesheet\">\n  </head>\n  <body>\n    <button class=\"delete-btn\">삭제</button>\n  </body>\n</html>",
-    "otherCode": ".delete-btn {\n  background-color: red;\n}",
-    "answer": "<!DOCTYPE html>\n<html>\n  <head>\n    <link rel=\"stylesheet\" href=\"style.css\">\n  </head>\n  <body>\n    <button class=\"delete-btn\">삭제</button>\n  </body>\n</html>"
+    "hint": "`href=\"style.css\"` 가 없어 css 파일이 아직 연결되지 않았다\n CSS는 `class` 선택자 `.deleteBtn`에 빨간색 스타일을 지정했지만\n 실제 HTML에서는 `class=\"deleteBtn\"`이 빠져 있어서 적용되지 않음",
+    "bugCode": "<!DOCTYPE html>\n<html>\n  <head>\n    <link rel=\"stylesheet\">\n  </head>\n  <body>\n    <button class=\"deleteBtn\">삭제</button>\n  </body>\n</html>",
+    "otherCode": ".deleteBtn {\n  background-color: red;\n}",
+    "answer": "<!DOCTYPE html>\n<html>\n  <head>\n    <link rel=\"stylesheet\" href=\"style.css\">\n  </head>\n  <body>\n    <button class=\"deleteBtn\">삭제</button>\n  </body>\n</html>"
   },
   {
     "id": 9,
