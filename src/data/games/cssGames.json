@@ -1,0 +1,8 @@
+{
+  "id": 1,
+  "title": "광고 숨기기",
+  "description": "잘못된 CSS가 적용되어 광고가 보이고 있어요. 올바르게 선택자를 바꾸고 광고를 숨겨보세요.",
+  "hint": "`visibility: none;`은 존재하지 않는 속성이에요!",
+  "bugCode": ".ad {\n\tvisibility: none;\n}",
+  "answer": "[class^=\"ad\"] {\n\tdisplay: none;\n}"
+}

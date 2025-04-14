@@ -1,7 +1,12 @@
 import Component from '../../../core/Component';
 import styles from './GamePage.module.css';
 import GameLanguage from '../../../components/games/game-language/GameLanguage';
+import parseHTML from '../../../utils/parseHtml';
+import compareDOM from '../../../utils/compareDom';
 
+/**
+ * @property {'html' | 'css'} language - 언어 (필수)
+ */
 export default class GamePage extends Component {
   template() {
     return `
@@ -30,25 +35,31 @@ export default class GamePage extends Component {
     const iframe = $el.querySelector('#code-preview');
 
     const initialCode = `
-      <style>
-        h1 { color: red; }
-      </style>
-      <h1>Hello Bug!</h1>
-      <script>
-        console.log('버그 발생!'); 
-      </script>
+      <img></img>
     `;
+
     textarea.value = initialCode;
+
+    const answercode = `
+      <img src="/assets/img/puppy.jpg">
+    `;
 
     function updatePreview() {
       const code = textarea.value;
       iframe.srcdoc = code;
-    }
 
-    // 초기 렌더링
-    updatePreview();
+      // html로 parse
+      const userDOM = parseHTML(code);
+      const answerDOM = parseHTML(answercode);
+
+      // 비교해 정답 여부 체크
+      const isCorrect = compareDOM(userDOM, answerDOM);
+      console.log(isCorrect);
+    }
 
     // 실시간 업데이트
     textarea.addEventListener('input', updatePreview);
+    // 초기 렌더링
+    updatePreview();
   }
 }
