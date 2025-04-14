@@ -15,7 +15,7 @@ export default class MenuBar extends Component {
     const { isOpen } = this.state;
 
     return `
-      <div class="${styles.shadow} ${isOpen ? styles.open : ''}">
+      <div class="${styles.shadow} ${isOpen ? styles.open : styles.close}">
         <div class="${styles.menuBar} ${isOpen ? styles.open : styles.close}">
           <button class="${styles.closeBtn}">
             <img src="${CROSS_ICON}" alt="close icon" class="${styles.icon}" />
@@ -48,32 +48,43 @@ export default class MenuBar extends Component {
   setEvent() {
     // 닫기 버튼 클릭 이벤트
     this.addEvent('click', `.${styles.closeBtn}`, () => {
-      const menuBar = document.querySelector(`.${styles.menuBar}`);
-      menuBar.classList.remove(styles.open);
-      menuBar.classList.add(styles.close);
-
-      setTimeout(() => {
-        this.setState({ isOpen: false });
-      }, 500); // 애니메이션 지속 시간(0.5초) 후 상태 변경
+      this.closeMenu();
     });
 
     // 메뉴 항목 클릭 이벤트
     this.addEvent('click', `.${styles.link}`, () => {
       this.closeMenu();
     });
+
+    // shadow 클릭 이벤트
+    this.addEvent('click', `.${styles.shadow}`, (event) => {
+      if (event.target.classList.contains(styles.shadow)) {
+        this.closeMenu();
+      }
+    });
   }
 
   openMenu() {
+    const menuBar = document.querySelector(`.${styles.menuBar}`);
+    const shadow = document.querySelector(`.${styles.shadow}`);
+
+    // 열기 애니메이션 적용
     this.setState({ isOpen: true });
+    menuBar.classList.remove(styles.close);
+    shadow.classList.remove(styles.close);
+    menuBar.classList.add(styles.open);
+    shadow.classList.add(styles.open);
   }
 
   closeMenu() {
     const menuBar = document.querySelector(`.${styles.menuBar}`);
-    menuBar.classList.remove(styles.open);
-    menuBar.classList.add(styles.close);
+    const shadow = document.querySelector(`.${styles.shadow}`);
 
-    setTimeout(() => {
-      this.setState({ isOpen: false });
-    }, 500);
+    // 닫기 애니메이션 적용
+    menuBar.classList.remove(styles.open);
+    shadow.classList.remove(styles.open);
+    menuBar.classList.add(styles.close);
+    shadow.classList.add(styles.close);
+    this.setState({ isOpen: false });
   }
 }

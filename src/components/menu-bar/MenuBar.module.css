@@ -9,10 +9,6 @@
   background-color: rgba(0, 0, 0, 50%); /* 반투명 배경 */
 }
 
-.shadow.open {
-  display: block; /* 열림 상태일 때 보이도록 설정 */
-}
-
 .menuBar {
   position: fixed;
   top: 0;
@@ -50,9 +46,17 @@
   animation: slideIn 0.5s ease-in-out;
 }
 
+.shadow.open {
+  display: block; /* 열림 상태일 때 보이도록 설정 */
+}
+
 .menuBar.close {
   right: -500px; /* 메뉴바가 닫힐 때 화면 밖으로 나감 */
   animation: slideOut 0.5s ease-in-out;
+}
+
+.shadow.close {
+  display: none; /* 닫힘 상태일 때 숨김 */
 }
 
 .closeBtn {
