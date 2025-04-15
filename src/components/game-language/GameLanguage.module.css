@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: center;
+}
+
+.languageIcon {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.html {
+  color: #e44f26;
+}
+
+.css {
+  color: #1572b6;
+}
+
+@media (width <= 768px) {
+  .container {
+    font-size: 14px;
+  }
+}

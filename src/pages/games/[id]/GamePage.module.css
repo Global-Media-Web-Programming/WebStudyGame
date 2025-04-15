@@ -15,26 +15,102 @@
   border-bottom: solid 4px rgba(255, 255, 255, 80%);
 }
 
+.gameMain {
+  display: flex;
+  gap: 50px;
+}
+
 .btnContainer {
   display: flex;
-  gap: 20px;
+  gap: 10px;
   align-items: center;
 }
 
-.codeEditor {
-  width: 50%;
-  height: 300px;
+.info {
+  display: flex;
+  flex: 0.6;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.title {
+  font-family: 'Cafe24 Danjunghae', sans-serif;
+  font-size: 48px;
+  font-weight: 400;
+}
+
+.description {
+  font-family: MaruBuri, sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 164%;
+  letter-spacing: 0.26px;
+}
+
+.subSection {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.subSectionTitle {
+  font-family: MaruBuri, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.otherCode {
+  padding: 16px;
+  margin-top: 8px;
+  overflow-x: auto;
   font-size: 14px;
+  color: #24292e;
+  white-space: pre;
+  background-color: #f6f8fa;
+  border-radius: 6px;
+}
+
+.codeEditor {
+  flex: 0.4;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 41%);
+  border-radius: 6px;
+}
+
+/* CodeMirror 줄 숫자 바 스타일 */
+.codeEditor :global(.cm-gutters) {
+  background-color: rgba(0, 0, 0, 20%) !important;
+  border-right: 1px solid rgba(255, 255, 255, 10%) !important;
+}
+
+.codeEditor :global(.cm-gutterElement) {
+  color: rgba(255, 255, 255, 50%) !important;
+}
+
+.codeEditor :global(.cm-activeLineGutter) {
+  background-color: rgba(255, 255, 255, 10%) !important;
 }
 
 .codePreview {
-  width: 50%;
-  height: 300px;
-  border: 1px solid #cccccc;
+  background-color: #f6f8fa;
+  border-radius: 6px;
 }
 
 @media (width <= 768px) {
   .editorContainer {
     padding: 0 10px;
+  }
+
+  .info {
+    gap: 20px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .description {
+    font-size: 16px;
   }
 }

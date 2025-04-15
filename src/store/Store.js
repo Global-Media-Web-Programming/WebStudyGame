@@ -6,8 +6,8 @@ const Store = {
     isHtmlSolved: false,
     isCSSSolved: false,
     // 문제 단계 - 푼 문제
-    htmlLevel: 0,
-    cssLevel: 0,
+    htmlLevel: 1,
+    cssLevel: 1,
   }),
 };
 

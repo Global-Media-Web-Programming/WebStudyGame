@@ -2,8 +2,8 @@
   {
     "id": 1,
     "title": "사라진 제목",
-    "description": "웹 페이지에 제목이 표시되어야 하지만 보이지 않는다.\n코드를 확인하고 올바른 제목 태그를 추가해라!",
-    "hint": "제목 태그가 빠져 있다.",
+    "description": "웹 페이지에 제목이 표시되어야 하지만 보이지 않는다.\n코드를 확인하고 올바른 최상위 제목 태그를 추가해라!",
+    "hint": "`h1` 태그가 빠져 있다.",
     "bugCode": "<p>웹 개발을 배워보자!</p>",
     "answer": "<h1>웹 개발을 배워보자!</h1>"
   },
@@ -12,8 +12,8 @@
     "title": "로그인 폼이 작동하지 않는다!",
     "description": "사용자가 아이디와 비밀번호를 입력한 후,\n'로그인' 버튼을 눌러야 하는데 버튼을 클릭해도 아무런 동작이 없다.",
     "hint": "`<form>` 태그 안에 `<button>` 태그가 누락됨!",
-    "bugCode": "<form>\n  <input type=\"text\" placeholder=\"아이디\">\n  <input type=\"password\" placeholder=\"비밀번호\">\n  <div>로그인</div>\n</form>",
-    "answer": "<form>\n  <input type=\"text\" name=\"username\" placeholder=\"아이디\">\n  <input type=\"password\" name=\"password\" placeholder=\"비밀번호\">\n  <button>로그인</button>\n</form>"
+    "bugCode": "<form>\n  <input type=\"text\" placeholder=\"아이디\"/>\n  <input type=\"password\" placeholder=\"비밀번호\"/>\n  <div>로그인</div>\n</form>",
+    "answer": "<form>\n  <input type=\"text\" placeholder=\"아이디\"/>\n  <input type=\"password\" placeholder=\"비밀번호\"/>\n  <button>로그인</button>\n</form>"
   },
   {
     "id": 3,
@@ -38,46 +38,46 @@
     "hint": "`<head>` 태그에 `<meta>` 태그를 넣어 description과 keywords를 설정할 수 있다.",
     "bugCode": "<html>\n<head>\n  <title>내 웹사이트</title>\n</head>\n<body>\n  <h1>환영합니다!</h1>\n</body>\n</html>",
     "answer": "<html>\n<head>\n  <title>내 웹사이트</title>\n  <meta name=\"description\" content=\"이 웹사이트는 HTML, CSS, JavaScript 학습을 위한 공간입니다.\">\n  <meta name=\"keywords\" content=\"HTML, CSS, JavaScript, 웹 개발\">\n</head>\n<body>\n  <h1>환영합니다!</h1>\n</body>\n</html>"
-  },
+  },  
   {
     "id": 6,
-    "title": "링크가 클릭되지 않는다!",
-    "description": "웹 페이지에서 \"페이지 이동\"이라는 문구를 클릭해도 아무 반응이 없다.\n코드를 확인하고, 링크가 정상 작동하도록 수정하라.\n(다음 페이지의 주소는 #로 작성해라)",
+    "title": "링크가 들어가지 않는다!",
+    "description": "웹 페이지에서 \"페이지 이동\"이라는 문구의 링크를 넣고 싶다.\n(다음 페이지의 주소는 javascript:void(0)로 작성해라)",
     "hint": "`href` 속성이 빠져 있음!",
     "bugCode": "<a>페이지 이동</a>",
-    "answer": "<a href=\"#\">페이지 이동</a>"
+    "answer": "<a href=\"javascript:void(0)\">페이지 이동</a>"
   },
   {
     "id": 7,
     "title": "이미지가 보이지 않는다!",
-    "description": "웹 페이지에 이미지를 넣었지만 화면에 아무것도 표시되지 않는다.\n코드를 확인하고, 이미지를 올바르게 표시되도록 수정하라.\n(이미지의 주소는 \"/assets/img/puppy.jpg\" 이다)",
+    "description": "웹 페이지에 이미지를 넣었지만 화면에 아무것도 표시되지 않는다.\n코드를 확인하고, 이미지를 올바르게 표시되도록 수정하라.\n(이미지의 주소는 \"/assets/img/puppy.webp\" 이다)",
     "hint": "`src` 속성이 빠져 있음!",
-    "bugCode": "<img alt=\"귀여운 강아지\">",
-    "answer": "<img src=\"/assets/img/puppy.jpg\" alt=\"귀여운 강아지\">"
+    "bugCode": "<img alt=\"귀여운 강아지\"/>",
+    "answer": "<img src=\"/assets/img/puppy.webp\" alt=\"귀여운 강아지\"/>"
   },
   {
     "id": 8,
     "title": "버튼 색이 바뀌지 않는다!",
-    "description": "버튼을 강조하기 위해 빨간색 배경을 적용하려고 했지만,\n웹 페이지에선 여전히 파란색 버튼이 보인다.\nCSS는 제대로 연결되어 있으며 문법 오류도 없다.\n**HTML 구조와 선택자 우선순위를 고려하여 문제를 해결하라.**",
-    "hint": "`href=\"style.css\"` 가 없어 css 파일이 아직 연결되지 않았다\n CSS는 `class` 선택자 `.deleteBtn`에 빨간색 스타일을 지정했지만\n 실제 HTML에서는 `class=\"deleteBtn\"`이 빠져 있어서 적용되지 않음",
+    "description": "버튼을 강조하기 위해 빨간색 배경을 적용하려고 했지만,\n 적용되지 않았다.\n css가 적용되게 수정해라.\n 스타일 파일의 주소는 \"./style.css\" 이다.",
+    "hint": "`href=\"./style.css\"` 가 없어 css 파일이 아직 연결되지 않았다\n CSS는 `class` 선택자 `.deleteBtn`에 빨간색 스타일을 지정했지만\n 실제 HTML에서는 `class=\"deleteBtn\"`이 빠져 있어서 적용되지 않음",
     "bugCode": "<!DOCTYPE html>\n<html>\n  <head>\n    <link rel=\"stylesheet\">\n  </head>\n  <body>\n    <button class=\"deleteBtn\">삭제</button>\n  </body>\n</html>",
     "otherCode": ".deleteBtn {\n  background-color: red;\n}",
-    "answer": "<!DOCTYPE html>\n<html>\n  <head>\n    <link rel=\"stylesheet\" href=\"style.css\">\n  </head>\n  <body>\n    <button class=\"deleteBtn\">삭제</button>\n  </body>\n</html>"
+    "answer": "<!DOCTYPE html>\n<html>\n  <head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n  </head>\n  <body>\n    <button class=\"deleteBtn\">삭제</button>\n  </body>\n</html>"
   },
   {
     "id": 9,
     "title": "비디오가 재생되지 않는다!",
-    "description": "웹 페이지에 비디오를 삽입하려했는데 아무런 컨트롤도 보이지 않고,\n재생되지 않는다.\n코드를 수정하여 비디오가 제대로 작동하게 하라.\n(비디오의 주소는 /assets/video/video.mp4이다.)",
+    "description": "웹 페이지에 비디오를 삽입하려했는데 아무런 컨트롤도 보이지 않고,\n재생되지 않는다.\n코드를 수정하여 비디오가 제대로 작동하게 하라.\n(비디오의 주소는 \"/assets/video/video.mp4\"이다.)",
     "hint": "`src` 속성과 `controls` 속성이 빠져 있음!",
     "bugCode": "<video></video>",
     "answer": "<video src=\"/assets/video/video.mp4\" controls></video>"
   },
   {
     "id": 10,
-    "title": "폼이 보이지만 사용자가 입력할 수 없다!",
-    "description": "웹 페이지에 회원가입 폼이 표시되긴 하지만,\n사용자가 정보를 입력할 수 없다.\n코드를 점검하여 사용자 입력이 가능한 폼으로 수정하라.",
-    "hint": "`value` 속성을 `placeholder` 처럼 잘못 사용함 (입력 불가능하게 됨)",
-    "bugCode": "<form>\n  <label for=\"name\">이름</label>\n  <input type=\"text\" name=\"username\" value=\"이름을 입력하세요\">\n\n  <label for=\"email\">이메일</label>\n  <input type=\"email\" name=\"email\" value=\"example@example.com\">\n\n  <button>제출</button>\n</form>",
-    "answer": "<form>\n  <label for=\"name\">이름</label>\n  <input type=\"text\" name=\"username\" placeholder=\"이름을 입력하세요\">\n\n  <label for=\"email\">이메일</label>\n  <input type=\"email\" name=\"email\" placeholder=\"example@example.com\">\n\n  <button>제출</button>\n</form>"
+    "title": "사용자가 입력할 수 없다!",
+    "description": "회원가입 폼을 만드려고 했지만,\n사용자가 정보를 입력할 수 없다.\n코드를 점검하여 사용자 입력이 가능한 폼으로 수정하라.",
+    "hint": "`input` 태그가 아닌 `div` 태그로 잘못 사용함 (입력 불가능하게 됨)",
+    "bugCode": "<form>\n  <label for=\"name\">이름</label>\n  <div type=\"text\" name=\"username\" placeholder=\"이름을 입력하세요\"/>\n\n  <label for=\"email\">이메일</label>\n  <div type=\"email\" name=\"email\" placeholder=\"example@example.com\"/>\n\n  <button>제출</button>\n</form>",
+    "answer": "<form>\n  <label for=\"name\">이름</label>\n  <input type=\"text\" name=\"username\" placeholder=\"이름을 입력하세요\"/>\n\n  <label for=\"email\">이메일</label>\n  <input type=\"email\" name=\"email\" placeholder=\"example@example.com\"/>\n\n  <button>제출</button>\n</form>"
   }
 ]

@@ -1,4 +1,5 @@
 import './styles/global.css';
+import './styles/font.css';
 import router from './router/router';
 
 // 초기 로드

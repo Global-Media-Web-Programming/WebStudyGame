@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   padding: 10px;
-  font-size: 12px;
+  font-size: 18px;
   font-weight: 600;
   color: #ffffff;
   text-align: center;
@@ -31,4 +31,10 @@
   pointer-events: none;
   cursor: not-allowed;
   opacity: 50%;
+}
+
+@media (width <= 768px) {
+  .button {
+    font-size: 12px;
+  }
 }

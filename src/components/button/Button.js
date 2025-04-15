@@ -13,19 +13,22 @@ import styles from './Button.module.css';
  */
 
 export default class Button extends Component {
+  initState() {
+    return {
+      disabled: this.props.disabled ?? false,
+    };
+  }
+
   template() {
-    const {
-      id,
-      text = '',
-      color = 'purple',
-      shadow = false,
-      disabled = false,
-    } = this.props;
+    const { id, text = '', color = 'purple', shadow = false } = this.props;
+
+    const { disabled } = this.state;
 
     return `
       <button 
         data-button-id="${id}" 
-        class="${styles.button} ${styles[color]} ${shadow ? styles.shadow : ''} ${disabled ? styles.disabled : ''}"
+        class="${styles.button} ${styles[color]} ${shadow ? styles.shadow : ''} ${disabled ? styles.disabled : ''} "
+        ${disabled ? 'disabled' : ''}
       >
         ${text}
       </button>
@@ -37,7 +40,9 @@ export default class Button extends Component {
     if (!id || !onClick) return;
 
     this.addEvent('click', `[data-button-id="${id}"]`, (e) => {
-      onClick(e);
+      if (!this.state.disabled) {
+        onClick(e);
+      }
     });
   }
 }
