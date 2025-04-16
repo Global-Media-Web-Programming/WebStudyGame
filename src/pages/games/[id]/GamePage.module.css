@@ -94,24 +94,40 @@
   border-radius: 6px;
 }
 
-.codeEditor {
+.htmlEditor {
   flex: 0.4 0 0;
   overflow: hidden;
   background-color: rgba(0, 0, 0, 41%);
   border-radius: 6px;
 }
 
+.cssEditor {
+  flex: 0.4 0 0;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 41%);
+  border-radius: 6px;
+}
+
+.cssInput {
+  padding: 5px 3px;
+  text-align: center;
+  outline: none;
+  background-color: #f6f8fa;
+  border: none;
+  border-radius: 6px;
+}
+
 /* CodeMirror 줄 숫자 바 스타일 */
-.codeEditor :global(.cm-gutters) {
+.htmlEditor :global(.cm-gutters) {
   background-color: rgba(0, 0, 0, 20%) !important;
   border-right: 1px solid rgba(255, 255, 255, 10%) !important;
 }
 
-.codeEditor :global(.cm-gutterElement) {
+.htmlEditor :global(.cm-gutterElement) {
   color: rgba(255, 255, 255, 50%) !important;
 }
 
-.codeEditor :global(.cm-activeLineGutter) {
+.htmlEditor :global(.cm-activeLineGutter) {
   background-color: rgba(255, 255, 255, 10%) !important;
 }
 

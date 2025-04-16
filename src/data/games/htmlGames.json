@@ -10,7 +10,7 @@
   {
     "id": 2,
     "title": "로그인 폼이 작동하지 않는다!",
-    "description": "사용자가 아이디와 비밀번호를 입력한 후,\n'로그인' 버튼을 눌러야 하는데 버튼을 클릭할 수 없다.\n 버튼이 클릭되게 수정해라.",
+    "description": "사용자가 아이디와 비밀번호를 입력한 후,\n'로그인' 버튼을 눌러야 하는데 버튼을 클릭할 수 없다.\n버튼이 클릭되게 수정해라.",
     "hint": "`<form>` 태그 안에 `<button>` 태그가 누락됐다.",
     "bugCode": "<form>\n <button onclick=\"alert('안녕하세요!')\">\n  클릭\n </button>\n</form>",
     "answer": "<form>\n <button type=\"button\" onclick=\"alert('안녕하세요!')\">\n  클릭\n </button>\n</form>"
@@ -58,7 +58,7 @@
   {
     "id": 8,
     "title": "버튼이 클릭이 안 돼!", 
-    "description": "버튼을 눌러도 아무 반응이 없다.\n 콘솔 확인 결과 onclick 속성에 작성한 함수가 호출되지 않는다.\n 왜 그런지 이유를 찾고 코드를 수정해라.",
+    "description": "버튼을 눌러도 아무 반응이 없다.\n콘솔 확인 결과 onclick 속성에 작성한 함수가 호출되지 않는다.\n왜 그런지 이유를 찾고 코드를 수정해라.",
     "hint": "`form` 태그 안의 버튼은 `type=\"submit\"`이 기본값이라, 클릭 시 폼이 새로고침되어 JS가 실행되지 않는다.\n `type=\"button\"`을 명시해야 JS 실행만 하도록 처리된다.",
     "bugCode": "<!DOCTYPE html>\n<html>\n  <head>\n    <link rel=\"stylesheet\">\n  </head>\n  <body>\n    <button class=\"deleteBtn\">삭제</button>\n  </body>\n</html>",
     "otherCode": ".deleteBtn {\n  background-color: red;\n}",

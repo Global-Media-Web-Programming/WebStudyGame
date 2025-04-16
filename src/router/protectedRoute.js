@@ -4,7 +4,7 @@ import { BUILD_ROUTES } from '../constants/routes';
 
 const protectedRoute = (Component, { language, id }) => {
   const currentSolved =
-    language === 'html' ? Store.state.isHtmlSolved : Store.state.isCssSolved;
+    language === 'html' ? Store.state.isHtmlSolved : Store.state.isCSSSolved;
   const currentLevel =
     language === 'html' ? Store.state.htmlLevel : Store.state.cssLevel;
 
@@ -17,7 +17,7 @@ const protectedRoute = (Component, { language, id }) => {
       navigate(BUILD_ROUTES.GAME(language, currentLevel));
       return null;
     }
-    // 해결했으면 결과 페이지 렌덜이
+    // 해결했으면 결과 페이지 렌더링
     return Component;
   }
 
