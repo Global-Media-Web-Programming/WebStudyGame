@@ -24,7 +24,7 @@ const protectedRoute = (Component, { language, id }) => {
   const requestedLevel = parseInt(id);
 
   // 현재 레벨보다 높은 문제로 접근하려고 할 때
-  if (requestedLevel > currentLevel + 1) {
+  if (requestedLevel > currentLevel) {
     // 현재 레벨로 리다이렉트
     navigate(BUILD_ROUTES.GAME(language, currentLevel));
     return null;
@@ -32,6 +32,11 @@ const protectedRoute = (Component, { language, id }) => {
 
   // 현재 레벨이거나 다음 레벨이면 접근 허용
   if (requestedLevel === currentLevel || requestedLevel === currentLevel + 1) {
+    return Component;
+  }
+
+  // 이전 레벨로의 접근도 허용
+  if (requestedLevel < currentLevel) {
     return Component;
   }
 

@@ -6,6 +6,7 @@ import Hint from '../../../components/hint/Hint';
 import Store from '../../../store/Store';
 import parseHTML from '../../../utils/parseHtml';
 import compareDOM from '../../../utils/compareDom';
+import escapeHtml from '../../../utils/escapeHtml';
 import htmlGameData from '../../../data/games/htmlGames.json';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/github.css';
@@ -17,31 +18,41 @@ import { BUILD_ROUTES } from '../../../constants/routes';
 
 /**
  * @property {'html' | 'css'} language - 언어 (필수)
+ * @property { number | string } id = 문제 번호 or 'result' (필수)
  */
 export default class GamePage extends Component {
   template() {
-    const { language } = this.props;
-    const currentLevel =
-      language === 'html' ? Store.state.htmlLevel : Store.state.cssLevel;
+    const { language, id } = this.props;
+    const currentLevel = parseInt(id);
     const currentGame = htmlGameData[currentLevel - 1];
+
+    const title = escapeHtml(currentGame.title, styles.keyword);
+    const description = escapeHtml(currentGame.description, styles.keyword);
 
     if (language === 'html') {
       return `
         <div class="${styles.editorContainer}">
           <div class="${styles.gameHeader}">
-            <div id="game-language"></div>
+            <div class="${styles.leftHeader}">
+              <div id="game-language"></div>
+              <div id="current-level" class="${styles.currentLevel}">
+                ${currentLevel}
+                <span class="${styles.totalLevel}"> / ${htmlGameData.length}</span>
+              </div>
+            </div>
             <div class="${styles.btnContainer}">
               <div id="hint-btn"></div>
+              <div id="prev-btn"></div>
               <div id="next-btn"></div>
             </div>
           </div>
           <div class="${styles.gameMain}">
             <div class="${styles.info}">
-              <h2 id="title" class="${styles.title}">Case #${currentLevel}: "${currentGame.title}"</h2>
-              <p id="description" class="${styles.description}">${currentGame.description}</p>
+              <h2 id="title" class="${styles.title}">Case #${currentLevel}: "${title}"</h2>
+              <p id="description" class="${styles.description}">${description}</p>
               <div class="${styles.subSection}">
                 <h4 class="${styles.subSectionTitle}">﹒결과</h4>
-                <iframe id="code-preview" class="${styles.codePreview}" sandbox="allow-scripts allow-same-origin"></iframe>
+                <iframe id="code-preview" class="${styles.codePreview}" sandbox="allow-scripts allow-same-origin allow-modals"></iframe>
               </div>
               <div id="other-code-container" class="${styles.subSection}">
                 <h4 class="${styles.subSectionTitle}">﹒CSS 코드</h4>
@@ -60,14 +71,35 @@ export default class GamePage extends Component {
     }
   }
 
+  prevButtonInstance = null;
   nextButtonInstance = null;
 
-  // 다음 버튼
+  // 이전 버튼 클릭 이벤트 핸들러
+  handlePrev = () => {
+    const { language, id } = this.props;
+    const currentLevel = parseInt(id);
+
+    navigate(BUILD_ROUTES.GAME(language, currentLevel - 1));
+  };
+
+  // 다음 버튼 클릭 이벤트 핸들러
   handleNext = () => {
     const { language, id } = this.props;
     const currentLevel = parseInt(id);
 
+    // 1~ 9
     if (currentLevel < htmlGameData.length) {
+      // 작성한 코드 저장
+      const code = this.editor.state.doc.toString();
+      Store.setState({
+        userCodes: {
+          ...Store.state.userCodes,
+          [language]: {
+            ...Store.state.userCodes[language],
+            [currentLevel]: code,
+          },
+        },
+      });
       // 다음 레벨로 이동
       navigate(BUILD_ROUTES.GAME(language, currentLevel + 1));
       // Store 업데이트는 문제를 풀었을 때만
@@ -85,23 +117,27 @@ export default class GamePage extends Component {
 
   mounted() {
     const { $el } = this;
-    const { language } = this.props;
-    const currentLevel =
-      language === 'html' ? Store.state.htmlLevel : Store.state.cssLevel;
+    const { language, id } = this.props;
+    const currentLevel = parseInt(id);
     const currentGame = htmlGameData[currentLevel - 1];
+
+    // 저장된 코드가 있으면 불러오기
+    const savedCode =
+      Store.state.userCodes[language]?.[currentLevel] ?? currentGame.bugCode;
 
     const gameLangEl = $el.querySelector('#game-language');
     new GameLanguage(gameLangEl, { language });
 
     const hintBtnEl = $el.querySelector('#hint-btn');
     const hintEl = $el.querySelector('#hint');
+    const prevBtnEl = $el.querySelector('#prev-btn');
     const nextBtnEl = $el.querySelector('#next-btn');
     const otherCodeEl = $el.querySelector('#other-code');
     const iframe = $el.querySelector('#code-preview');
 
     // CodeMirror 에디터 설정
-    const editor = new EditorView({
-      doc: currentGame.bugCode,
+    this.editor = new EditorView({
+      doc: savedCode,
       extensions: [
         basicSetup,
         html(),
@@ -137,6 +173,17 @@ export default class GamePage extends Component {
       },
     });
 
+    // 이전 버튼
+    this.prevButtonInstance =
+      currentGame.id !== 1 &&
+      new Button(prevBtnEl, {
+        id: 'prev-game-btn',
+        text: '이전',
+        color: 'purple',
+        onClick: this.handlePrev,
+      });
+
+    // 다음 버튼
     this.nextButtonInstance = new Button(nextBtnEl, {
       id: 'next-game-btn',
       text: '다음',
@@ -146,8 +193,7 @@ export default class GamePage extends Component {
     });
 
     const updatePreview = () => {
-      const code = editor.state.doc.toString();
-      // 사용자 입력 css 적용할 수 있는 방법 찾기
+      const code = this.editor.state.doc.toString();
       iframe.srcdoc = code;
 
       // html로 parse

@@ -1,6 +1,7 @@
 import Component from '../../core/Component';
 import styles from './Hint.module.css';
 import Button from '../button/Button';
+import escapeHtml from '../../utils/escapeHtml';
 
 /**
  * Hint 컴포넌트
@@ -11,13 +12,7 @@ import Button from '../button/Button';
 export default class Hint extends Component {
   template() {
     const { content } = this.props;
-    const escapedContent = content
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#039;')
-      .replace(/`([^`]+)`/g, `<span class="${styles.keyword}">$1</span>`);
+    const escapedContent = escapeHtml(content, styles.keyword);
 
     return `
       <div class="${styles.overlay}">

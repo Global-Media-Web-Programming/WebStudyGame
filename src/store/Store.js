@@ -7,6 +7,10 @@ const initialState = {
   cssLevel: 1,
   isHtmlSolved: false,
   isCssSolved: false,
+  userCodes: {
+    html: {},
+    css: {},
+  },
 };
 
 // localStorage에 저장된 상태가 있으면 사용
@@ -17,7 +21,22 @@ const Store = {
   state,
   // 상태 변경 시 localStorage에 저장
   setState(newState) {
-    Object.assign(this.state, newState);
+    const deepMerge = (target, source) => {
+      Object.keys(source).forEach((key) => {
+        if (
+          source[key] &&
+          typeof source[key] === 'object' &&
+          !Array.isArray(source[key])
+        ) {
+          target[key] = deepMerge(target[key] || {}, source[key]);
+        } else {
+          target[key] = source[key];
+        }
+      });
+      return target;
+    };
+
+    deepMerge(this.state, newState);
     setItem('gameState', this.state);
   },
 };
