@@ -26,7 +26,7 @@
   {
     "id": 4,
     "title": "표에서 제목이 보이지 않는다!",
-    "description": "테이블을 만들었지만 제목이 구분되지 않는다.\n올바른 `table` 태그를 사용하여 문제를 해결하라!",
+    "description": "테이블을 만들었지만 제목이 구분되지 않는다.\n`th` 태그를 사용하여 문제를 해결해라",
     "hint": "``<th>`(제목) 태그가 아닌 <td>`(셀) 으로 작성돼 있다.",
     "bugCode": "<table border=\"1\">\n  <tr>\n    <td>이름</td>\n    <td>나이</td>\n  </tr>\n  <tr>\n    <td>홍길동</td>\n    <td>25</td>\n  </tr>\n  <tr>\n    <td>이순신</td>\n    <td>30</td>\n  </tr>\n</table>",
     "answer": "<table border=\"1\">\n  <tr>\n    <th>이름</th>\n    <th>나이</th>\n  </tr>\n  <tr>\n    <td>홍길동</td>\n    <td>25</td>\n  </tr>\n  <tr>\n    <td>이순신</td>\n    <td>30</td>\n  </tr>\n</table>"
@@ -42,7 +42,7 @@
   {
     "id": 6,
     "title": "링크가 들어가지 않는다!",
-    "description": "웹 페이지에서 \"페이지 이동\"이라는 문구의 `링크`를 넣고 싶다.\n(다음 페이지의 주소는 javascript:void(0)로 작성해라)",
+    "description": "웹 페이지에서 \"페이지 이동\"이라는 문구의 `링크`를 넣고 싶다.\n(다음 페이지의 주소는 \"javascript:void(0)\"로 작성해라)",
     "hint": "`href` 속성이 빠져 있다.",
     "bugCode": "<a>페이지 이동</a>",
     "answer": "<a href=\"javascript:void(0)\">페이지 이동</a>"
