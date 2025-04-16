@@ -20,8 +20,11 @@ import { BUILD_ROUTES } from '../../../constants/routes';
  */
 export default class GamePage extends Component {
   template() {
-    console.log('template 실행 htmlLevel:', Store.state.htmlLevel);
     const { language } = this.props;
+    const currentLevel =
+      language === 'html' ? Store.state.htmlLevel : Store.state.cssLevel;
+    const currentGame = htmlGameData[currentLevel - 1];
+
     if (language === 'html') {
       return `
         <div class="${styles.editorContainer}">
@@ -34,8 +37,8 @@ export default class GamePage extends Component {
           </div>
           <div class="${styles.gameMain}">
             <div class="${styles.info}">
-              <h2 id="title" class="${styles.title}"></h2>
-              <p id="description" class="${styles.description}"></p>
+              <h2 id="title" class="${styles.title}">Case #${currentLevel}: "${currentGame.title}"</h2>
+              <p id="description" class="${styles.description}">${currentGame.description}</p>
               <div class="${styles.subSection}">
                 <h4 class="${styles.subSectionTitle}">﹒결과</h4>
                 <iframe id="code-preview" class="${styles.codePreview}" sandbox="allow-scripts allow-same-origin"></iframe>
@@ -61,21 +64,31 @@ export default class GamePage extends Component {
 
   // 다음 버튼
   handleNext = () => {
-    console.trace('🚨 handleNext 호출');
-    const currentLevel = Store.state.htmlLevel;
-    console.log('currentLevel in handleNext', currentLevel);
+    const { language, id } = this.props;
+    const currentLevel = parseInt(id);
 
-    if (currentLevel < htmlGameData.length - 1) {
-      Store.state.htmlLevel += 1;
+    if (currentLevel < htmlGameData.length) {
+      // 다음 레벨로 이동
+      navigate(BUILD_ROUTES.GAME(language, currentLevel + 1));
+      // Store 업데이트는 문제를 풀었을 때만
+      if (language === 'html') {
+        Store.setState({ htmlLevel: currentLevel + 1 });
+      } else {
+        Store.setState({ cssLevel: currentLevel + 1 });
+      }
     } else {
-      navigate(BUILD_ROUTES.GAME_RESULT('html'));
-      Store.state.isHtmlSolved = true;
+      // 마지막 레벨을 풀었으면 결과 페이지로
+      navigate(BUILD_ROUTES.GAME_RESULT(language));
+      Store.setState({ isHtmlSolved: true });
     }
   };
 
   mounted() {
     const { $el } = this;
     const { language } = this.props;
+    const currentLevel =
+      language === 'html' ? Store.state.htmlLevel : Store.state.cssLevel;
+    const currentGame = htmlGameData[currentLevel - 1];
 
     const gameLangEl = $el.querySelector('#game-language');
     new GameLanguage(gameLangEl, { language });
@@ -83,19 +96,8 @@ export default class GamePage extends Component {
     const hintBtnEl = $el.querySelector('#hint-btn');
     const hintEl = $el.querySelector('#hint');
     const nextBtnEl = $el.querySelector('#next-btn');
-    const titleEl = $el.querySelector('#title');
-    const descriptionEl = $el.querySelector('#description');
     const otherCodeEl = $el.querySelector('#other-code');
     const iframe = $el.querySelector('#code-preview');
-
-    // 현재 레벨에 맞는 게임 데이터
-    const currentLevel = Store.state.htmlLevel;
-    // console.log(currentLevel);
-    const currentGame = htmlGameData[currentLevel - 1];
-
-    // 게임 정보 렌더링
-    titleEl.textContent = `Case #${currentLevel}: "${currentGame.title}"`;
-    descriptionEl.textContent = currentGame.description;
 
     // CodeMirror 에디터 설정
     const editor = new EditorView({

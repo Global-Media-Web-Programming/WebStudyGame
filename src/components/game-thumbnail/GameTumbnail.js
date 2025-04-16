@@ -19,6 +19,8 @@ export default class GameTumbnail extends Component {
     return {
       isHtmlSolved: Store.state.isHtmlSolved,
       isCSSSolved: Store.state.isCSSSolved,
+      htmlLevel: Store.state.htmlLevel,
+      cssLevel: Store.state.cssLevel,
     };
   }
 

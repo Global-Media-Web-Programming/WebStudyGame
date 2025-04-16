@@ -11,7 +11,7 @@
     "id": 2,
     "title": "로그인 폼이 작동하지 않는다!",
     "description": "사용자가 아이디와 비밀번호를 입력한 후,\n'로그인' 버튼을 눌러야 하는데 버튼을 클릭해도 아무런 동작이 없다.",
-    "hint": "`<form>` 태그 안에 `<button>` 태그가 누락됨!",
+    "hint": "`<form>` 태그 안에 `<button>` 태그가 누락됐다.",
     "bugCode": "<form>\n  <input type=\"text\" placeholder=\"아이디\"/>\n  <input type=\"password\" placeholder=\"비밀번호\"/>\n  <div>로그인</div>\n</form>",
     "answer": "<form>\n  <input type=\"text\" placeholder=\"아이디\"/>\n  <input type=\"password\" placeholder=\"비밀번호\"/>\n  <button>로그인</button>\n</form>"
   },
@@ -19,7 +19,7 @@
     "id": 3,
     "title": "리스트가 이상하게 표시된다!",
     "description": "웹 페이지에 목록을 표시하려고 했지만 제대로 나오지 않는다.\n올바른 목록 태그를 사용하여 수정하라!",
-    "hint": "리스트 태그 `<li>` 가 없다!",
+    "hint": "리스트 태그 `<li>` 가 없다.",
     "bugCode": "<ul>\n  <p>HTML 배우기</p>\n  <p>CSS 배우기</p>\n  <p>JavaScript 배우기</p>\n</ul>",
     "answer": "<ul>\n  <li>HTML 배우기</li>\n  <li>CSS 배우기</li>\n  <li>JavaScript 배우기</li>\n</ul>"
   },
@@ -27,8 +27,8 @@
     "id": 4,
     "title": "표에서 데이터가 보이지 않는다!",
     "description": "테이블을 만들었지만 데이터가 표시되지 않는다.\n올바른 `table` 태그를 사용하여 문제를 해결하라!",
-    "hint": "`<tr>`(행)과 `<td>`(셀) 태그가 빠져 있음!",
-    "bugCode": "<table border=\"1\">\n  이름 나이\n  홍길동 25\n  이순신 30\n</table>",
+    "hint": "``<td>`(셀) 태그가 아닌 <th>`(제목) 으로 작성돼 있다.",
+    "bugCode": "<table border=\"1\">\n  <tr>\n    <th>이름</th>\n    <th>나이</th>\n  </tr>\n  <tr>\n    <th>홍길동</th>\n    <th>25</th>\n  </tr>\n  <tr>\n    <th>이순신</th>\n    <th>30</th>\n  </tr>\n</table>",
     "answer": "<table border=\"1\">\n  <tr>\n    <th>이름</th>\n    <th>나이</th>\n  </tr>\n  <tr>\n    <td>홍길동</td>\n    <td>25</td>\n  </tr>\n  <tr>\n    <td>이순신</td>\n    <td>30</td>\n  </tr>\n</table>"
   },
   {
