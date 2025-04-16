@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "사라진 제목",
-    "description": "웹 페이지에 제목이 표시되어야 하지만 보이지 않는다.\n코드를 확인하고 올바른 `최상위 제목 태그`를 추가해라!",
+    "description": "웹 페이지에 제목이 표시되어야 하지만 보이지 않는다.\n코드를 확인하고 올바른 `최상위 제목 태그`를 추가해라.",
     "hint": "`h1` 태그가 빠져 있다.",
     "bugCode": "<p>웹 개발을 배워보자!</p>",
     "answer": "<h1>웹 개발을 배워보자!</h1>"
@@ -18,7 +18,7 @@
   {
     "id": 3,
     "title": "리스트가 이상하게 표시된다!",
-    "description": "웹 페이지에 목록을 표시하려고 했지만 제대로 나오지 않는다.\n올바른 `목록 태그`를 사용하여 수정하라!",
+    "description": "웹 페이지에 목록을 표시하려고 했지만 제대로 나오지 않는다.\n올바른 `목록 태그`를 사용하여 수정해라.",
     "hint": "리스트 태그 `<li>` 가 없다.",
     "bugCode": "<ul>\n  <p>HTML 배우기</p>\n  <p>CSS 배우기</p>\n  <p>JavaScript 배우기</p>\n</ul>",
     "answer": "<ul>\n  <li>HTML 배우기</li>\n  <li>CSS 배우기</li>\n  <li>JavaScript 배우기</li>\n</ul>"
@@ -26,7 +26,7 @@
   {
     "id": 4,
     "title": "표에서 제목이 보이지 않는다!",
-    "description": "테이블을 만들었지만 제목이 구분되지 않는다.\n`th` 태그를 사용하여 문제를 해결해라",
+    "description": "테이블을 만들었지만 제목이 구분되지 않는다.\n`<th>` 태그를 사용하여 문제를 해결해라.",
     "hint": "``<th>`(제목) 태그가 아닌 <td>`(셀) 으로 작성돼 있다.",
     "bugCode": "<table border=\"1\">\n  <tr>\n    <td>이름</td>\n    <td>나이</td>\n  </tr>\n  <tr>\n    <td>홍길동</td>\n    <td>25</td>\n  </tr>\n  <tr>\n    <td>이순신</td>\n    <td>30</td>\n  </tr>\n</table>",
     "answer": "<table border=\"1\">\n  <tr>\n    <th>이름</th>\n    <th>나이</th>\n  </tr>\n  <tr>\n    <td>홍길동</td>\n    <td>25</td>\n  </tr>\n  <tr>\n    <td>이순신</td>\n    <td>30</td>\n  </tr>\n</table>"
@@ -34,7 +34,7 @@
   {
     "id": 5,
     "title": "검색 엔진에 노출되지 않는 웹 페이지",
-    "description": "이 웹 페이지는 잘 만들어졌지만, 검색 엔진에서 제대로 인식되지 않는다.\n`SEO(검색 엔진 최적화)`를 위해\n`description`으로 “이 웹사이트는 HTML, CSS, JavaScript 학습을 위한 공간입니다.”,\n`keywords`로 “HTML, CSS, JavaScript, 웹 개발”을 추가하라!",
+    "description": "이 웹 페이지는 잘 만들어졌지만, 검색 엔진에서 제대로 인식되지 않는다.\n`SEO(검색 엔진 최적화)`를 위해\n`description`으로 “이 웹사이트는 HTML, CSS, JavaScript 학습을 위한 공간입니다.”,\n`keywords`로 “HTML, CSS, JavaScript, 웹 개발”을 추가해라.",
     "hint": "`<head>` 태그에 `<meta>` 태그를 넣어 description과 keywords를 설정할 수 있다.",
     "bugCode": "<html>\n<head>\n  <title>내 웹사이트</title>\n</head>\n<body>\n  <h1>환영합니다!</h1>\n</body>\n</html>",
     "answer": "<html>\n<head>\n  <title>내 웹사이트</title>\n  <meta name=\"description\" content=\"이 웹사이트는 HTML, CSS, JavaScript 학습을 위한 공간입니다.\">\n  <meta name=\"keywords\" content=\"HTML, CSS, JavaScript, 웹 개발\">\n</head>\n<body>\n  <h1>환영합니다!</h1>\n</body>\n</html>"
@@ -75,7 +75,7 @@
   {
     "id": 10,
     "title": "사용자가 입력할 수 없다!",
-    "description": "회원가입 폼을 만드려고 했지만,\n사용자가 정보를 입력할 수 없다.\n코드를 점검하여 `사용자 입력이 가능한 폼`으로 수정하라.",
+    "description": "회원가입 폼을 만드려고 했지만,\n사용자가 정보를 입력할 수 없다.\n코드를 점검하여 `사용자 입력이 가능한 폼`으로 수정해라.",
     "hint": "`input` 태그가 아닌 `div` 태그로 잘못 사용함 (입력 불가능하게 된다)",
     "bugCode": "<form>\n  <label for=\"name\">이름</label>\n  <div type=\"text\" name=\"username\" placeholder=\"이름을 입력하세요\"/>\n\n  <label for=\"email\">이메일</label>\n  <div type=\"email\" name=\"email\" placeholder=\"example@example.com\"/>\n\n  <button>제출</button>\n</form>",
     "answer": "<form>\n  <label for=\"name\">이름</label>\n  <input type=\"text\" name=\"username\" placeholder=\"이름을 입력하세요\"/>\n\n  <label for=\"email\">이메일</label>\n  <input type=\"email\" name=\"email\" placeholder=\"example@example.com\"/>\n\n  <button>제출</button>\n</form>"
