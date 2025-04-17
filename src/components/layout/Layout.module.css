@@ -50,7 +50,7 @@
 
 /* ====== 게임 페이지 ====== */
 .gameHeader {
-  padding: 20px 10px;
+  padding: 20px 30px;
 }
 
 .gameNavBoldLine {
@@ -100,6 +100,14 @@
   .nav {
     gap: 20px;
     padding: 5px;
+  }
+
+  .gameHeader {
+    padding: 20px 10px;
+  }
+
+  .logoSmall {
+    font-size: 20px;
   }
 }
 

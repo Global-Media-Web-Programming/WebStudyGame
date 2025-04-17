@@ -1,0 +1,29 @@
+.gameHeader {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 14px;
+  border-bottom: solid 4px rgba(255, 255, 255, 80%);
+}
+
+.leftHeader {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.currentLevel {
+  font-weight: 600;
+}
+
+.totalLevel {
+  color: #9f9f9f;
+}
+
+.btnContainer {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}

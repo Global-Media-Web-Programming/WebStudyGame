@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "title": "특정 요소에 스타일을 적용해야한다",
+    "description": "ad로 시작하는 모든 요소를 보이지 않게 해야한다.\n올바른 css 선택자를 사용해 수정해라.",
+    "bugCode": " {\n  display: none;\n}",
+    "answer": "[class^='ad']",
+    "hint": "`^=` 선택자를 사용하면 지정한 문자열로 시작하는 속성값을 선택할 수 있다.",
+    "otherCode": "<div class=\"ad_banner\">ad_banner</div>\n<div class=\"promotion_banner\">promotion_banner</div>\n<div class=\"ad_popup_banner\">ad_popup_banner</div>",
+    "inputPos": {
+      "line": 0,
+      "start": 0,
+      "end": 0
+    }
+  },
+  {
+    "id": 2,
+    "title": "주황색이어야 해!",
+    "description": "제목의 색이 주황색이 되도록 해라.",
+    "bugCode": ".p {\n  color: red;\n}\np {\n  color: green;\n}\n#p {\n  color: yellow;\n}\n.h1 {\n  color: blue \n}\nh1 {\n  color: orange ;\n}\n#h1 {\n  color: purple;\n}",
+    "answer": "!important",
+    "hint": "CSS 연산자 우선순위는 `!important` >>> `inline 스타일` >>> `id 선택자` >>> ` class / 속성 / 가상 클래스 선택자` >>> `요소(태그) / 가상 요소 선택자` >>> `전체 선택자` 이다.",
+    "otherCode": "<h1 id=\"p\" class=\"h1\">A</h1>\n <p id=\"h1\" class=\"p\">B</p>",
+    "inputPos": {
+      "line": 13,
+      "start": 16,
+      "end": 16
+    }
+  },
+  {
+    "id": 3,
+    "title": "hovering 효과가 필요해",
+    "description": "요소에 마우스를 올렸을 때 색이 파란색으로 바뀌도록 수정해라.",
+    "bugCode": ".fly {\n  color: black;\n}\n\n.fly {\n  color: blue;\n}",
+    "answer": ":hover",
+    "hint": "`:hover` 가상 클래스를 사용하면 마우스 오버 시 스타일을 적용할 수 있다.",
+    "otherCode": "<div class=\"fly\">element</div>",
+    "inputPos": {
+      "line": 4,
+      "start": 4,
+      "end": 4
+    }
+  },
+  {
+    "id": 4,
+    "title": "헤더는 고정돼야해",
+    "description": "헤더가 스크롤해도 화면 상단에 고정되도록 수정해라.",
+    "bugCode": ".fixed-header {\n  position: ;\n  top: 0;\n  width: 100%;\n  padding: 10px;\n  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);\n}",
+    "answer": "fixed",
+    "hint": "`position: fixed`를 사용하면 요소를 화면에 고정할 수 있다.",
+    "otherCode": "<header class=\"fixed-header\">Welcome!</header>",
+    "inputPos": {
+      "line": 1,
+      "start": 12,
+      "end": 12
+    }
+  },
+  {
+    "id": 5,
+    "title": "여백이 필요해!",
+    "description": "현수막 사이에 여백이 필요하다. 하단에 `10px`의 여백을 줘라.",
+    "bugCode": ".banner1 {\n  background-color: skyblue;\n  padding: 10px;\n  text-align: center;\n  margin-bottom: ;\n}\n\n.banner2 {\n  background-color: skyblue;\n  padding: 10px;\n  text-align: center;\n}",
+    "answer": "10px",
+    "hint": "padding 속성을 사용하면 요소 내부에 상하좌우 여백을 조절할 수 있다.",
+    "otherCode": "<div class=\"banner1\">현수막1</div>\n<div class=\"banner2\">현수막2</div>",
+    "inputPos": {
+      "line": 4,
+      "start": 17,
+      "end": 17
+    }
+  },
+  {
+    "id": 6,
+    "title": "물건이 가로가 아니라 세로로 배치돼 있었다고!",
+    "description": "사건 현장을 재구성하고 있는데\n물건을 가로가 아닌 세로로 배치해야 했다.\n올바른 `flex-container 속성`을 사용해 수정해라.",
+    "bugCode": ".container {\n  display: flex;\n  flex-direction: ;\n  gap: 10px;\n}\n\n.item {\n  padding: 10px;\n  text-align: center;  background-color: grey;\n}",
+    "answer": "column",
+    "hint": "`flex-direction` 속성을 사용하면 요소의 정렬 방향을 변경할 수 있다.",
+    "otherCode": "<div class=\"container\">\n  <div class=\"item\">물건</div>\n  <div class=\"item\">물건</div>\n</div>",
+    "inputPos": {
+      "line": 2,
+      "start": 18,
+      "end": 18
+    }
+  },
+  {
+    "id": 7,
+    "title": "몽타주 하나만 붙이라 했잖아!",
+    "description": "지시를 잘못 듣고 벽에 몽타주를 여러 개 붙였다. 하나만 남기고 떼어야 한다.",
+    "bugCode": ".wall {\n  height: 130px;\n  background-color: brown;\n}\n\n.poster {\n  background-image: url(https://joy-choi.github.io/web-study-game/assets/img/puppy.webp);\n  background-size: contain;\n  background-repeat: ;\n}",
+    "answer": "no-repeat",
+    "hint": "`background-repeat` 속성의 기본값은 `repeat`이며, 반복을 막으려면 `no-repeat`을 설정해야 한다.",
+    "otherCode": "<div class=\"wall\">\n  <div class=\"poster\"></div>\n</div>",
+    "inputPos": {
+      "line": 8,
+      "start": 21,
+      "end": 21
+    }
+  },
+  {
+    "id": 8,
+    "title": "몽타주가 돌아가 있잖아!",
+    "description": "수배 전단지의 몽타주가 돌아가있다. 바르게 수정해라.",
+    "bugCode": ".montage {\n  width: 100px;\n  height: auto;\n  transform: ;\n}",
+    "answer": "rotate(90deg)",
+    "hint": "`transform` 속성의 `rotate` 변환 함수를 사용하면 요소를 회전시킬 수 있다.",
+    "otherCode": "<div class=\"poster\">\n  <img class=\"montage\" src=\"/assets/img/puppyRotated.webp\" alt=\"몽타주\">\n</div>",
+    "inputPos": {
+      "line": 3,
+      "start": 13,
+      "end": 13
+    }
+  },
+  {
+    "id": 9,
+    "title": "플래시 좀 켜줘!",
+    "description": "사건 현장이 너무 어둡다.\n가리키면(hover) 플래시가 켜지게 해야 한다. 부드럽게 색상을 바꿔라.",
+    "bugCode": ".flash {\n  width: 100px;\n  height: 100px;\n  background-color: grey;\n  border-radius: 50%;\n\n  &:hover {\n  background-color: beige;\n  transition:  .3s;}\n}",
+    "answer": "background-color",
+    "hint": "`transition` 속성을 사용하면 스타일 변화가 부드럽게 진행된다.",
+    "otherCode": "<div class=\"flash\"></div>",
+    "inputPos": {
+      "line": 8,
+      "start": 14,
+      "end": 14
+    }
+  },
+  {
+    "id": 10,
+    "title": "시뮬레이션이 안돼!",
+    "description": "공이 떨어지며 바닥에 튕기는 상황을 시뮬레이션 하고 싶은데 왜 안되지?\n`bounce` @keyframes를 수정해 y축으로 50px 이동하게 해라.",
+    "bugCode": ".circle {\n  width: 50px;\n  height: 50px;\n  border-radius: 50%;\n  background-color: purple;\n  animation: bounce 1s ease-in-out infinite alternate;\n}\n\n@keyframes bounce {\n  0% {\n    transform: translateY(0);\n  }\n  50% {\n    transform:  scaleX(1.2) scaleY(0.9);\n  }\n  100% {\n    transform: translateY(0);\n  }\n}",
+    "answer": "translateY(50px)",
+    "hint": "`translateY` 변환 함수를 사용하면 요소를 수직으로 이동할 수 있다.",
+    "otherCode": "<div class=\"circle\"></div>",
+    "inputPos": {
+      "line": 13,
+      "start": 15,
+      "end": 15
+    }
+  }
+]

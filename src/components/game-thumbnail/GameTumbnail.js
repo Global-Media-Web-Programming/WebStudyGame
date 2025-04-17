@@ -6,6 +6,7 @@ import { GAME_DESCRIPTION } from '../../constants/game';
 import Component from '../../core/Component';
 import Button from '../button/Button';
 import { BUILD_ROUTES } from '../../constants/routes';
+
 import CODE_FILE from '/src/assets/img/icon/code-file.svg';
 import FOOTSTEPS from '/src/assets/img/icon/footsteps.svg';
 import RESOLVED from '/src/assets/img/icon/footsteps.svg';
@@ -18,6 +19,8 @@ export default class GameTumbnail extends Component {
     return {
       isHtmlSolved: Store.state.isHtmlSolved,
       isCSSSolved: Store.state.isCSSSolved,
+      htmlLevel: Store.state.htmlLevel,
+      cssLevel: Store.state.cssLevel,
     };
   }
 
@@ -79,6 +82,14 @@ export default class GameTumbnail extends Component {
 
   mounted() {
     // 렌더 후 this.state에 접근
+    /*
+      Store.state.isHtmlSolved = true로 변경되면
+      observe의 콜백 함수가 실행되고
+      newState에 새로운 값이 할당되고
+      조건문을 통해 state가 실제로 변경되었는지 확인한 후
+      Object.assign(this.state, newState)로 컴포넌트의 state가 업데이트됨
+      이렇게 Store의 state 변화를 감지해서 컴포넌트의 state를 업데이트하는 방식임
+    */
     observe(() => {
       const newState = {
         isHtmlSolved: Store.state.isHtmlSolved,

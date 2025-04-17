@@ -1,6 +1,9 @@
 import Component from '../../../core/Component';
 import styles from './GameResultPage.module.css';
 
+/**
+ * @property {'html' | 'css'} language - 언어 (필수)
+ */
 export default class GameResultPage extends Component {
   template() {
     const { language } = this.props;
