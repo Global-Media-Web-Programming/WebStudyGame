@@ -38,11 +38,11 @@
     "hint": "`<head>` 태그에 `<meta>` 태그를 넣어 description과 keywords를 설정할 수 있다.",
     "bugCode": "<html>\n<head>\n  <title>내 웹사이트</title>\n</head>\n<body>\n  <h1>환영합니다!</h1>\n</body>\n</html>",
     "answer": "<html>\n<head>\n  <title>내 웹사이트</title>\n  <meta name=\"description\" content=\"이 웹사이트는 HTML, CSS, JavaScript 학습을 위한 공간입니다.\">\n  <meta name=\"keywords\" content=\"HTML, CSS, JavaScript, 웹 개발\">\n</head>\n<body>\n  <h1>환영합니다!</h1>\n</body>\n</html>"
-  },  
+  },
   {
     "id": 6,
-    "title": "링크가 들어가지 않는다!",
-    "description": "웹 페이지에서 \"페이지 이동\"이라는 문구의 `링크`를 넣고 싶다.\n(다음 페이지의 주소는 \"javascript:void(0)\"로 작성해라)",
+    "title": "링크가 들어가지 않았다!",
+    "description": "\"페이지 이동\"이라는 문구의 `링크`를 넣도록 수정해라.\n(다음 페이지의 주소는 \"javascript:void(0)\"로 작성해라)",
     "hint": "`href` 속성이 빠져 있다.",
     "bugCode": "<a>페이지 이동</a>",
     "answer": "<a href=\"javascript:void(0)\">페이지 이동</a>"
@@ -50,24 +50,23 @@
   {
     "id": 7,
     "title": "이미지가 보이지 않는다!",
-    "description": "웹 페이지에 이미지를 넣었지만 화면에 아무것도 표시되지 않는다.\n코드를 확인하고, `이미지`가 올바르게 표시되도록 수정하라.\n(이미지의 주소는 \"/assets/img/puppy.webp\" 이다)",
+    "description": "웹 페이지에 이미지를 넣었지만 화면에 아무것도 표시되지 않는다.\n코드를 확인하고, `이미지`가 올바르게 표시되도록 수정해라.\n(이미지의 주소는 \"/assets/img/puppy.webp\" 이다)",
     "hint": "`src` 속성이 빠져 있다.",
     "bugCode": "<img alt=\"귀여운 강아지\"/>",
     "answer": "<img src=\"/assets/img/puppy.webp\" alt=\"귀여운 강아지\"/>"
   },
   {
     "id": 8,
-    "title": "버튼이 클릭이 안 돼!", 
+    "title": "버튼 클릭이 안 돼!",
     "description": "버튼을 눌러도 아무 반응이 없다.\n콘솔 확인 결과 onclick 속성에 작성한 함수가 호출되지 않는다.\n왜 그런지 이유를 찾고 코드를 수정해라.",
     "hint": "`form` 태그 안의 버튼은 `type=\"submit\"`이 기본값이라, 클릭 시 폼이 새로고침되어 JS가 실행되지 않는다.\n `type=\"button\"`을 명시해야 JS 실행만 하도록 처리된다.",
-    "bugCode": "<!DOCTYPE html>\n<html>\n  <head>\n    <link rel=\"stylesheet\">\n  </head>\n  <body>\n    <button class=\"deleteBtn\">삭제</button>\n  </body>\n</html>",
-    "otherCode": ".deleteBtn {\n  background-color: red;\n}",
-    "answer": "<!DOCTYPE html>\n<html>\n  <head>\n    <link rel=\"stylesheet\" href=\"./style.css\">\n  </head>\n  <body>\n    <button class=\"deleteBtn\">삭제</button>\n  </body>\n</html>"
+    "bugCode": "<form>\n  <button onclick=\"alert('버튼 클릭')\">\n    버튼\n  </button>\n</form>",
+    "answer": "<form>\n  <button type=\"button\" onclick=\"alert('버튼 클릭')\">\n    버튼\n  </button>\n</form>"
   },
   {
     "id": 9,
     "title": "비디오가 재생되지 않는다!",
-    "description": "웹 페이지에 비디오를 삽입하려했는데 아무런 `컨트롤`도 보이지 않고,\n재생되지 않는다.\n코드를 수정하여 `비디오`가 제대로 작동하게 하라.\n(비디오의 주소는 \"/assets/video/video.mp4\"이다.)",
+    "description": "웹 페이지에 비디오를 삽입하려했는데 아무런 `컨트롤`도 보이지 않고, 재생되지 않는다.\n코드를 수정하여 `비디오`가 제대로 작동하게 해라.\n(비디오의 주소는 \"/assets/video/video.mp4\"이다)",
     "hint": "`src` 속성과 `controls` 속성이 빠져 있다/",
     "bugCode": "<video></video>",
     "answer": "<video src=\"/assets/video/video.mp4\" controls></video>"
