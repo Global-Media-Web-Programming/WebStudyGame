@@ -1,7 +1,7 @@
-import Component from '../../core/Component';
+import Component from '../../../core/Component';
 import styles from './GamePreview.module.css';
-import parseHTML from '../../utils/parseHtml';
-import compareDOM from '../../utils/compareDom';
+import parseHTML from '../../../utils/parseHtml';
+import compareDOM from '../../../utils/compareDom';
 
 export default class GamePreview extends Component {
   template() {

@@ -1,8 +1,8 @@
-# 6조 - 웹 계산기 과제
+# 6조 [Code News](https://web-study-game.vercel.app/)
 
 ## 📂 프로젝트 소개
 
-### HTML, CSS 학습을 위한 게임 사이트입니다.
+### HTML, CSS 학습을 위한 사이트입니다.
 
 &nbsp;
 
@@ -64,7 +64,40 @@ npm run dev
 ## 📄 폴더 구조
 
 ```
-
+  src/
+  ├── components/
+  │   ├── game-editor/
+  │   │   ├── GameEditor.js
+  │   │   └── GameEditor.module.css
+  │   ├── game-header/
+  │   │   ├── GameHeader.js
+  │   │   └── GameHeader.module.css
+  │   ├── game-other-code/
+  │   │   ├── GameOtherCode.js
+  │   │   └── GameOtherCode.module.css
+  │   └── game-preview/
+  │       ├── GamePreview.js
+  │       └── GamePreview.module.css
+  ├── constants/
+  │   └── routes.js
+  ├── core/
+  │   └── Component.js
+  ├── data/
+  │   └── games/
+  │       ├── cssGames.json
+  │       └── htmlGames.json
+  ├── pages/
+  │   └── games/
+  │       └── [id]/
+  │           ├── GamePage.js
+  │           └── GamePage.module.css
+  ├── store/
+  │   └── Store.js
+  └── utils/
+      ├── compareDom.js
+      ├── escapeHtml.js
+      ├── navigate.js
+      └── parseHtml.js
 ```
 
 &nbsp;

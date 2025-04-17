@@ -1,7 +1,7 @@
-import Component from '../../core/Component';
+import Component from '../../../core/Component';
 import styles from './GameHeader.module.css';
-import GameLanguage from '../game-language/GameLanguage';
-import Button from '../button/Button';
+import GameLanguage from '../../game-language/GameLanguage';
+import Button from '../../button/Button';
 import Hint from '../hint/Hint';
 
 export default class GameHeader extends Component {

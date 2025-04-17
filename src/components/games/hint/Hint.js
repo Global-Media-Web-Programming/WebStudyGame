@@ -1,7 +1,7 @@
-import Component from '../../core/Component';
+import Component from '../../../core/Component';
 import styles from './Hint.module.css';
-import Button from '../button/Button';
-import escapeHtml from '../../utils/escapeHtml';
+import Button from '../../button/Button';
+import escapeHtml from '../../../utils/escapeHtml';
 
 /**
  * Hint 컴포넌트
