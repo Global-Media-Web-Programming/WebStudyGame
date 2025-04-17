@@ -1,4 +1,4 @@
-import Component from '../../core/Component';
+import Component from '../../../core/Component';
 import styles from './GameOtherCode.module.css';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/github.css';

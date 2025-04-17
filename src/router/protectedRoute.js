@@ -8,9 +8,6 @@ const protectedRoute = (Component, { language, id }) => {
   const currentLevel =
     language === 'html' ? Store.state.htmlLevel : Store.state.cssLevel;
 
-  console.log('id: ', id);
-  console.log('currentLevel: ', currentLevel);
-
   // 게임 결과 페이지 접근 시
   if (id === 'result') {
     if (!currentSolved) {

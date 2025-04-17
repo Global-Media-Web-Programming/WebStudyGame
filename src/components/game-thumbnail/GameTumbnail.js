@@ -9,10 +9,10 @@ import { BUILD_ROUTES } from '../../constants/routes';
 
 import CODE_FILE from '/src/assets/img/icon/code-file.svg';
 import FOOTSTEPS from '/src/assets/img/icon/footsteps.svg';
-import RESOLVED from '/src/assets/img/icon/footsteps.svg';
+import RESOLVED from '/src/assets/img/icon/resolved.svg';
 import UNRESOLVED from '/src/assets/img/icon/unresolved.svg';
-import HTML_GAME from '/src/assets/img/game/html.webp';
-import CSS_GAME from '/src/assets/img/game/css.webp';
+import HTML_GAME from '/src/assets/img/game/htmlGameThumbnail.svg';
+import CSS_GAME from '/src/assets/img/game/cssGameThumbnail.svg';
 
 export default class GameTumbnail extends Component {
   initState() {
