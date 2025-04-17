@@ -15,33 +15,34 @@ export default class MenuBar extends Component {
     const { isOpen } = this.state;
 
     return `
-      <div class="${styles.shadow} ${isOpen ? styles.open : styles.close}">
-        <div class="${styles.menuBar} ${isOpen ? styles.open : styles.close}">
-          <button class="${styles.closeBtn}">
-            <img src="${CROSS_ICON}" alt="close icon" class="${styles.icon}" />
-          </button>
-          <hr class="${styles.divider}" />
-          <hr class="${styles.divider}" />
-          <ul class="${styles.menuList}">
-            <li class="${styles.menuItem}">
-              <img src="${HOME_ICON}" alt="home icon" class="${styles.icon}" />
-              <a href="/" class="${styles.link}">Home</a>
-            </li>
-            <li class="${styles.menuItem}">
-              <img src="${GAMES_ICON}" alt="games icon" class="${styles.icon}" />
-              <a href="/games" class="${styles.link}">Games</a>
-            </li>
-            <li class="${styles.menuItem}">
-              <img src="${LEARN_ICON}" alt="learn icon" class="${styles.icon}" />
-              <a href="/learn" class="${styles.link}">Learn</a>
-            </li>
-            <li class="${styles.menuItem}">
-              <img src="${ARTICLE_ICON}" alt="article icon" class="${styles.icon}" />
-              <a href="/article" class="${styles.link}">Articles</a>
-            </li>
-          </ul>
-        </div>
+    <div class="${styles.menuBarContainer}">
+      <div class="${styles.shadow} ${styles.close} ${isOpen ? styles.open : ''}"></div>
+      <div class="${styles.menuBar} ${styles.close} ${isOpen ? styles.open : ''}">
+        <button class="${styles.closeBtn}">
+          <img src="${CROSS_ICON}" alt="close icon" class="${styles.icon}" />
+        </button>
+        <hr class="${styles.divider}" />
+        <hr class="${styles.divider}" />
+        <ul class="${styles.menuList}">
+          <li class="${styles.menuItem}">
+          <img src="${HOME_ICON}" alt="home icon" class="${styles.icon}" />
+            <a href="/" class="${styles.link}">Home</a>
+          </li>
+          <li class="${styles.menuItem}">
+            <img src="${GAMES_ICON}" alt="games icon" class="${styles.icon}" />
+            <a href="/games" class="${styles.link}">Games</a>
+          </li>
+          <li class="${styles.menuItem}">
+            <img src="${LEARN_ICON}" alt="learn icon" class="${styles.icon}" />
+            <a href="/learn" class="${styles.link}">Learn</a>
+          </li>
+          <li class="${styles.menuItem}">
+            <img src="${ARTICLE_ICON}" alt="article icon" class="${styles.icon}" />
+            <a href="/article" class="${styles.link}">Articles</a>
+          </li>
+        </ul>
       </div>
+    </div>
     `;
   }
 
@@ -58,7 +59,8 @@ export default class MenuBar extends Component {
 
     // shadow 클릭 이벤트
     this.addEvent('click', `.${styles.shadow}`, (event) => {
-      if (event.target.classList.contains(styles.shadow)) {
+      const menuBar = document.querySelector(`.${styles.menuBar}`);
+      if (!menuBar.contains(event.target)) {
         this.closeMenu();
       }
     });
@@ -68,23 +70,30 @@ export default class MenuBar extends Component {
     const menuBar = document.querySelector(`.${styles.menuBar}`);
     const shadow = document.querySelector(`.${styles.shadow}`);
 
-    // 열기 애니메이션 적용
     this.setState({ isOpen: true });
-    menuBar.classList.remove(styles.close);
-    shadow.classList.remove(styles.close);
-    menuBar.classList.add(styles.open);
-    shadow.classList.add(styles.open);
+
+    requestAnimationFrame(() => {
+      menuBar.classList.remove(styles.close);
+      shadow.classList.remove(styles.close);
+
+      requestAnimationFrame(() => {
+        menuBar.classList.add(styles.open);
+        shadow.classList.add(styles.open);
+      });
+    });
   }
 
   closeMenu() {
     const menuBar = document.querySelector(`.${styles.menuBar}`);
     const shadow = document.querySelector(`.${styles.shadow}`);
 
-    // 닫기 애니메이션 적용
     menuBar.classList.remove(styles.open);
     shadow.classList.remove(styles.open);
     menuBar.classList.add(styles.close);
     shadow.classList.add(styles.close);
-    this.setState({ isOpen: false });
+
+    setTimeout(() => {
+      this.setState({ isOpen: false }); // 렌더링 리셋
+    }, 500);
   }
 }
