@@ -1,0 +1,17 @@
+.subSection {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.subSectionTitle {
+  font-family: MaruBuri, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.codePreview {
+  background-color: #f6f8fa;
+  border-radius: 6px;
+}

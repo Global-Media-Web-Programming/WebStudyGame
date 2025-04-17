@@ -1,17 +1,65 @@
 .editorContainer {
   display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 0 30px 10px;
+}
+
+.gameMain {
+  display: flex;
   gap: 20px;
 }
 
-.codeEditor {
-  width: 50%;
-  height: 300px;
-  font-family: monospace;
-  font-size: 14px;
+.info {
+  display: flex;
+  flex: 0.6 0 0;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
 }
 
-.codePreview {
-  width: 50%;
-  height: 300px;
-  border: 1px solid #cccccc;
+.container {
+  flex: 0.4 0 0;
+  padding: 10px;
+}
+
+.title {
+  font-family: 'Cafe24 Danjunghae', sans-serif;
+  font-size: 48px;
+  font-weight: 400;
+}
+
+.description {
+  font-family: MaruBuri, sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 164%;
+  letter-spacing: 0.26px;
+  white-space: pre-wrap;
+}
+
+/* 백틱 코드 블록 */
+.keyword {
+  padding: 4px;
+  color: #ffd7d7;
+  background-color: rgba(255, 255, 255, 20%);
+  border-radius: 5px;
+}
+
+@media (width <= 768px) {
+  .editorContainer {
+    padding: 0 10px;
+  }
+
+  .info {
+    gap: 20px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
 }

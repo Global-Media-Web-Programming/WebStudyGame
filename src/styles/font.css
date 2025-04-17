@@ -48,6 +48,15 @@
 }
 
 @font-face {
+  font-family: 'Cafe24 Danjunghae';
+  font-style: normal;
+  font-weight: 500;
+  src:
+    url('/assets/fonts/woff2/Cafe24Danjunghae-v2.0.woff2') format('woff2'),
+    url('/assets/fonts/woff/Cafe24Danjunghae-v2.0.woff') format('woff');
+}
+
+@font-face {
   font-family: Pretendard;
   font-style: normal;
   font-weight: 100;

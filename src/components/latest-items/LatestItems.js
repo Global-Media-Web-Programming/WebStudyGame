@@ -8,8 +8,7 @@ export default class LatestItems extends Component {
   template() {
     return `
       <h2 class="${styles.latestTitle}">최신 소식</h2>
-      <section class="${styles.container}">
-      </section>
+      <section class="${styles.container}"></section>
     `;
   }
 
