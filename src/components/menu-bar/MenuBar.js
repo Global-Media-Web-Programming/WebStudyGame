@@ -41,6 +41,10 @@ export default class MenuBar extends Component {
             <a href="/article" class="${styles.link}">Articles</a>
           </li>
         </ul>
+        <div class="${styles.menuBarBottom}">
+          <p class="${styles.bottomTitle}">CODE NEWS</p>
+          <p class="${styles.bottomText}">BY WEB PROGRAMING TEAM 6</p>
+        </div>
       </div>
     </div>
     `;
