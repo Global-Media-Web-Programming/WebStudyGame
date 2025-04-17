@@ -83,7 +83,7 @@ export default class GamePreview extends Component {
         .replace(/\s+/g, '')
         .replace(/['"]/g, '"')
         .replace(/(?<=\d)\.(?=\d)/g, '');
-      console.log(normalizedUserAnswer, normalizedAnswer);
+      // console.log(normalizedUserAnswer, normalizedAnswer);
       return normalizedUserAnswer === normalizedAnswer;
     }
   }
