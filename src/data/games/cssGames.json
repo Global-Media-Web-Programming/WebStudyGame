@@ -114,7 +114,7 @@
   {
     "id": 9,
     "title": "플래시 좀 켜줘!",
-    "description": "사건 현장이 너무 어둡다.\n가리키면(hover) 플래시가 켜지게 해야 한다. 부드럽게 색상을 바꿔라.",
+    "description": "사건 현장이 너무 어둡다.\n가리키면(hover) 플래시가 켜지게 해야 한다.\n `background-color` 속성을 사용해 부드럽게 색상을 바꿔라.",
     "bugCode": ".flash {\n  width: 100px;\n  height: 100px;\n  background-color: grey;\n  border-radius: 50%;\n\n  &:hover {\n  background-color: beige;\n  transition:  .3s;}\n}",
     "answer": "background-color",
     "hint": "`transition` 속성을 사용하면 스타일 변화가 부드럽게 진행된다.",
