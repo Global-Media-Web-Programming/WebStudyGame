@@ -64,7 +64,34 @@ npm run dev
 ## 📄 폴더 구조
 
 ```
-
+📁 src/
+├── 📁 components/
+│   ├── 📁 button/
+│   │   ├── 📄 Button.js
+│   │   └── 📄 Button.module.css
+│   └── 📁 layout/
+│       ├── 📄 Layout.js
+│       └── 📄 Layout.module.css
+├── 📁 constants/
+│   └── 📄 routes.js
+├── 📁 core/
+│   └── 📄 Component.js
+├── 📁 data/
+│   └── 📁 games/
+│       ├── 📄 cssGames.json
+│       └── 📄 htmlGames.json
+├── 📁 pages/
+│   └── 📁 games/
+│       └── 📁 [id]/
+│           ├── 📄 GamePage.js
+│           └── 📄 GamePage.module.css
+├── 📁 store/
+│   └── 📄 Store.js
+└── 📁 utils/
+    ├── 📄 compareDom.js
+    ├── 📄 escapeHtml.js
+    ├── 📄 navigate.js
+    └── 📄 parseHtml.js
 ```
 
 &nbsp;
@@ -78,7 +105,6 @@ npm run dev
 
   - 기본 파일: `camelCase` → e.g. calculate.ts, apiClient.ts
   - 컴포넌트 파일: `PascalCase` → e.g. Button.tsx, ProductList.tsx
-  - 이미지 파일: `snake_case` → e.g. background_image.png, profile_avatar.svg
 
 - 변수 및 함수
 
@@ -132,17 +158,10 @@ e.g. style: 홈페이지 스타일링
 
 **main, develop** 브랜치와 **feat** 보조 브랜치를 사용했습니다.
 
-<<<<<<< Updated upstream
-
-- **main**: 배포 단계에서만 사용하는 브랜치
-- **develop**: 개발 단계에서 main 역할을 하는 브랜치
-- **feat**: 기능 단위로 독립적인 개발 환경을 위하여 사용하고 merge 후 각 브랜치를 삭제
-  - # feat 브랜치 이름 규칙: `feat/기능명` e.g. feat/admin-login
 - **main**: 배포 가능한 안정적인 상태의 코드를 유지
 - **develop**: 기능 개발이 완료된 코드가 머지되는 브랜치
 - **feat**: 기능 단위로 독립적인 개발 환경을 위하여 사용하고 merge 후 각 브랜치를 삭제 / issue 하나 당-branch 하나, PR 하나
   - feat 브랜치 이름 규칙: `feat/기능명-이슈번호` e.g. feat/admin-login-12
-    > > > > > > > Stashed changes
 
 &nbsp;
 
@@ -160,25 +179,9 @@ e.g. style: 홈페이지 스타일링
 
 역할을 분담해 페이지별 퍼블리싱 작업 위주로 개발했습니다.
 
-### 기능 구현 (2025.4.7 ~ 2025.4.16)
+### 기능 구현 (2025.4.7 ~ 2025.4.20)
 
 역할을 분담해 전체적인 기능을 구현했습니다.
-
-&nbsp;
-
-## 🚀 주요 페이지와 기능
-
-### ☁️ 반응형 디자인
-
-모든 페이지에 다양한 디바이스에서 작동할 수 있도록 스타일을 적용했습니다.
-
-### ✔️ 메인 페이지
-
-### ✔️ HTML 게임 페이지
-
-### ✔️ CSS 게임 페이지
-
-### ✔️ 개발자 소개 페이지
 
 &nbsp;
 
@@ -192,10 +195,10 @@ e.g. style: 홈페이지 스타일링
     <td align="center"><a href="https://github.com/jangtaebin3"><img src="https://avatars.githubusercontent.com/u/162237964?v=4" width="100px;" alt="jangtaebin3"/><br /><sub><b>🍀 장태빈</b></sub></a></td>
   </tr>
   <tr>
-    <td align="center">역할</td>
-    <td align="center">역할</td>
-    <td align="center">역할</td>
-    <td align="center">역할</td>
+    <td align="center">역할: 개념, 아티클 페이지</td>
+    <td align="center">역할: 프로젝트 세팅, 게임 페이지</td>
+    <td align="center">역할: 게임 결과 페이지</td>
+    <td align="center">역할: 메뉴바 컴포넌트 개발</td>
   </tr>
 </table>
 
@@ -217,9 +220,17 @@ e.g. style: 홈페이지 스타일링
 
 - **KEEP**
 
+  `observer pattern`을 통해 컴포넌트간 상태를 공유함으로써 다양한 기능을 추가할 수 있었다. (이전문제로 돌아가기, 아직 안 푼 문제 접근 불가 등)
+
 - **PROBLEM**
--
+
+  사용자가 정해진 정답을 입력하도록 유도한 느낌이 있다.
+  더 다양한 경우의 수를 고려하지 못한 점이 아쉽다.
+  반응형 스타일을 적용하지 못했다.
+
 - **TRY**
+
+  사용자 경험을 더 신경쓰자.
 
 &nbsp;
 
