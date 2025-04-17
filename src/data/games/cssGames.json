@@ -87,7 +87,7 @@
     "id": 7,
     "title": "몽타주 하나만 붙이라 했잖아!",
     "description": "지시를 잘못 듣고 벽에 몽타주를 여러 개 붙였다. 하나만 남기고 떼어야 한다.",
-    "bugCode": ".wall {\n  height: 130px;\n  background-color: brown;\n}\n\n.poster {\n  background-image: url(https://joy-choi.github.io/web-study-game/assets/img/puppy.webp);\n  background-size: contain;\n  background-repeat: ;\n}",
+    "bugCode": ".wall {\n  height: 130px;\n  background-color: brown;\n}\n\n.poster {\n  background-image: url(https://raw.githubusercontent.com/Global-Media-Web-Programming/WebStudyGame/develop/public/assets/img/puppy.webp);\n  background-size: contain;\n  background-repeat: ;\n}",
     "answer": "no-repeat",
     "hint": "`background-repeat` 속성의 기본값은 `repeat`이며, 반복을 막으려면 `no-repeat`을 설정해야 한다.",
     "otherCode": "<div class=\"wall\">\n  <div class=\"poster\"></div>\n</div>",
