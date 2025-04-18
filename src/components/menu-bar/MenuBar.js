@@ -96,8 +96,8 @@ export default class MenuBar extends Component {
     menuBar.classList.add(styles.close);
     shadow.classList.add(styles.close);
 
-    setTimeout(() => {
-      this.setState({ isOpen: false }); // 렌더링 리셋
-    }, 500);
+    shadow.addEventListener('transitionend', () => {
+      this.setState({ isOpen: false });
+    });
   }
 }
