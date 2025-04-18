@@ -1,7 +1,7 @@
 import Component from '../../core/Component';
 import styles from './Layout.module.css';
 import { ROUTES } from '../../constants/routes';
-import MENU_BAR from '/src/assets/img/icon/menu.svg';
+import MENU_BAR from '../../assets/img/icon/menu.svg';
 import MenuBar from '../menu-bar/MenuBar';
 
 class Layout extends Component {
@@ -35,7 +35,9 @@ class Layout extends Component {
             <div class="${styles.gameNavBoldLine}"></div>
             <div class="${styles.gameNav}">
               <a href="${ROUTES.MAIN}" class="${styles.logoSmall}">CODE NEWS</a>
-              <img src="${MENU_BAR}" alt="menu icon"/>
+              <div id="menu-bar" class="${styles.menuBarPlace}">
+                <img src="${MENU_BAR}" alt="menu icon" class="${styles.menuBarIcon}" />
+              </div>
             </div>
             <div class="${styles.gameNavLines}">
               <div class="${styles.gameNavLine}"></div>
@@ -55,6 +57,14 @@ class Layout extends Component {
     if (!Page || !pageRoot) return;
 
     new Page(pageRoot, params);
+
+    const menuBarEl = this.$el.querySelector('#menu-bar');
+    console.log('menuBarEl:', menuBarEl); // 디버깅용 로그
+
+    if (!menuBarEl) {
+      console.error('#menu-bar element not found!');
+      return;
+    }
 
     // MenuBar 컴포넌트 생성 및 DOM에 추가
     const menuBarContainer = document.createElement('div');
