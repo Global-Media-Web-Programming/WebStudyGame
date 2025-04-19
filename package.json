@@ -34,5 +34,11 @@
     "*.js": "eslint --cache --fix",
     "*.{js,css,md}": "prettier --write",
     "*.css": "stylelint --cache --fix"
+  },
+  "dependencies": {
+    "@codemirror/lang-html": "^6.4.9",
+    "codemirror": "^6.0.1",
+    "highlight.js": "^11.11.1",
+    "mysql": "^2.18.1"
   }
 }
