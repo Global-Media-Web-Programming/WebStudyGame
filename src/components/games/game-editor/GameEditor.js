@@ -1,4 +1,4 @@
-import Component from '../../core/Component';
+import Component from '../../../core/Component';
 import styles from './GameEditor.module.css';
 import { EditorView, basicSetup } from 'codemirror';
 import { html } from '@codemirror/lang-html';

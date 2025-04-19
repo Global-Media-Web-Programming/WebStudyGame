@@ -1,12 +1,14 @@
 .container {
   display: flex;
   gap: 27px;
+  align-items: center;
   justify-content: space-between;
   width: 100%;
 }
 
 .infoSection {
   display: flex;
+  flex: 3 0 0;
   flex: 1;
   flex-direction: column;
   gap: 40px;
@@ -60,13 +62,10 @@
 
 .imgWrapper {
   display: flex;
+  flex: 2 0 0;
   align-items: center;
   justify-content: center;
-  width: 391px;
-  height: 314px;
   overflow: hidden;
-
-  /* background-color: red; */
 }
 
 .img {
