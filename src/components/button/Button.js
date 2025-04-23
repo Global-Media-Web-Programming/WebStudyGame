@@ -9,14 +9,27 @@ import styles from './Button.module.css';
  * @property {string} [text=''] - 버튼에 표시될 텍스트
  * @property {'purple' | 'yellow'} [color='purple'] - 버튼 색상
  * @property {boolean} [shadow=false] - 그림자 효과 여부
+ * @property {boolean} [disabled=false] - 버튼 비활성화 여부
  */
 
 export default class Button extends Component {
+  initState() {
+    return {
+      disabled: this.props.disabled ?? false,
+    };
+  }
+
   template() {
     const { id, text = '', color = 'purple', shadow = false } = this.props;
 
+    const { disabled } = this.state;
+
     return `
-      <button data-button-id="${id}" class="${styles.button} ${styles[color]} ${shadow ? styles.shadow : ''}">
+      <button 
+        data-button-id="${id}" 
+        class="${styles.button} ${styles[color]} ${shadow ? styles.shadow : ''} ${disabled ? styles.disabled : ''} "
+        ${disabled ? 'disabled' : ''}
+      >
         ${text}
       </button>
     `;
@@ -27,7 +40,9 @@ export default class Button extends Component {
     if (!id || !onClick) return;
 
     this.addEvent('click', `[data-button-id="${id}"]`, (e) => {
-      onClick(e);
+      if (!this.state.disabled) {
+        onClick(e);
+      }
     });
   }
 }

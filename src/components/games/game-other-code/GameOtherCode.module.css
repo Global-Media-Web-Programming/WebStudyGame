@@ -1,0 +1,22 @@
+.subSection {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.subSectionTitle {
+  font-family: MaruBuri, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.otherCode {
+  padding: 16px;
+  margin-top: 8px;
+  overflow: auto;
+  color: #24292e;
+  white-space: pre;
+  background-color: #f6f8fa;
+  border-radius: 6px;
+}

@@ -16,6 +16,7 @@ body,
 body {
   font-family: Pretendard, sans-serif;
   font-weight: 500;
+  line-height: 1.5;
   color: #ffffff;
   word-break: keep-all;
   background-color: #222033;

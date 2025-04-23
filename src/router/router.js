@@ -1,13 +1,24 @@
 import Layout from '../components/layout/Layout';
 import routes from './routes';
+import protectedRoute from './protectedRoute';
 
 const router = () => {
   const path = location.pathname;
   const app = document.querySelector('#app');
-  const isGamePage = /^\/games\/(html|css)/.test(path); // 게임 화면일 땐 레이아웃 다르게 하려고
+  const isGamePage = /^\/games\/(html|css)/.test(path);
 
   const matchedRoute = matchRoute(path);
-  const { component, params } = matchedRoute;
+  let { component, params } = matchedRoute;
+
+  // 게임 페이지인 경우 protectedRoute 적용
+  if (isGamePage) {
+    // result 페이지
+    if (path.endsWith('/result')) {
+      component = protectedRoute(component, { ...params, id: 'result' });
+    } else if (params.language && params.id) {
+      component = protectedRoute(component, params);
+    }
+  }
 
   new Layout(app, {
     path,
