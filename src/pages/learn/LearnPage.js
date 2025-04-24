@@ -15,7 +15,7 @@ export default class ArticlePage extends Component {
     const $content = this.$el.querySelector('#content');
 
     // JSON -> obj
-    const learns = await fetch('/data/learns.json').then((response) =>
+    const learns = await fetch('../../data/learns.json').then((response) =>
       response.json(),
     );
 
