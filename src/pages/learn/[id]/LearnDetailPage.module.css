@@ -1,0 +1,57 @@
+.learn-detail-container {
+  width: 80%;
+  max-width: 800px;
+  padding: 2rem;
+  margin: 0 auto;
+  margin-top: 40px;
+  font-family: sans-serif;
+  color: white;
+  background-color: rgba(255, 255, 255, 5%);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 30%);
+}
+
+.learn-title {
+  font-family: Lancelot, sans-serif;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.learn-author {
+  margin-bottom: 1rem;
+  text-align: right;
+}
+
+.learn-content-placeholder {
+  height: 200px;
+  margin-bottom: 2rem;
+}
+
+.learn-main h2 {
+  font-size: 1.5rem;
+}
+
+.learn-main p {
+  font-size: 1rem;
+  color: #cccccc;
+}
+
+.learn-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.nav-button {
+  padding: 0.5rem 1rem;
+  color: white;
+  background-color: #5a4fff;
+  border: none;
+}
+
+.learn-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
