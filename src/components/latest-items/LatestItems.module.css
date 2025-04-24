@@ -14,18 +14,10 @@
 }
 
 .article {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 322px;
-  height: 214px;
-  overflow: hidden;
+  padding: 10px 5px;
   cursor: pointer;
 }
 
-.img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  object-position: center;
+.articleTitle {
+  font-size: 20px;
 }

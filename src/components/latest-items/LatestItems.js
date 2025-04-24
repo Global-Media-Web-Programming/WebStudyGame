@@ -15,12 +15,12 @@ export default class LatestItems extends Component {
   mounted() {
     const container = this.$el.querySelector(`.${styles.container}`);
 
-    articles.forEach(({ id, title, image }) => {
+    articles.forEach(({ id, title }) => {
       const articleEl = document.createElement('article');
       articleEl.className = styles.article;
       articleEl.dataset.id = id;
       articleEl.innerHTML = `
-        <img src="${image}" alt="${title}-thumbnail" class="${styles.img}" />
+        <h2 class="${styles.articleTitle}">📜 ${title}</h2>
       `;
 
       container.appendChild(articleEl);
