@@ -14,11 +14,6 @@ export default class ArticlePage extends Component {
   async mounted() {
     const $content = this.$el.querySelector('#content');
 
-    // JSON -> obj
-    const articles = await fetch('/data/articles.json').then((response) =>
-      response.json(),
-    );
-
-    new ArticleListPage($content, { articles });
+    new ArticleListPage($content);
   }
 }

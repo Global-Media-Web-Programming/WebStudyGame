@@ -1,5 +1,6 @@
 import Component from '../../core/Component';
 import ArticleThumbnail from '../../components/article-thumbnail/ArticleThumbnail';
+import articles from '../../data/articles.json';
 
 export default class ArticleListPage extends Component {
   template() {
@@ -10,7 +11,6 @@ export default class ArticleListPage extends Component {
 
   mounted() {
     const $list = this.$el.querySelector('.article-list');
-    const { articles } = this.props;
 
     articles.forEach((article) => {
       const $thumbnail = document.createElement('div');
