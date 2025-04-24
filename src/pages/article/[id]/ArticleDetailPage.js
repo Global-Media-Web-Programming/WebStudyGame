@@ -1,6 +1,7 @@
 import Component from '../../../core/Component';
 import styles from './ArticleDetailPage.module.css';
 import articles from '../../../data/articles.json';
+import { BUILD_ROUTES } from '../../../constants/routes';
 
 export default class ArticleDetailPage extends Component {
   template() {
@@ -26,12 +27,12 @@ export default class ArticleDetailPage extends Component {
         <div class="${styles['article-navigation']}">
           ${
             article.id > 1
-              ? `<a href="/articles/${article.id - 1}"><button class="${styles['nav-button']}">이전 글 보기</button></a>`
+              ? `<a href="${BUILD_ROUTES.ARTICLE_DETAIL(article.id - 1)}"><button class="${styles['nav-button']}">이전 글 보기</button></a>`
               : '<div></div>'
           }
           ${
             article.id < articles.length
-              ? `<a href="/articles/${article.id + 1}"><button class="${styles['nav-button']}">다음 글 보기</button></a>`
+              ? `<a href="${BUILD_ROUTES.ARTICLE_DETAIL(article.id + 1)}"><button class="${styles['nav-button']}">다음 글 보기</button></a>`
               : '<div></div>'
           }
         </div>

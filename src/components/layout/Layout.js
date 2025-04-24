@@ -51,31 +51,25 @@ class Layout extends Component {
   }
 
   mounted() {
-    const { Page, params } = this.props;
+    const { Page, params, isGamePage } = this.props;
     const pageRoot = document.querySelector('#page-root');
 
     if (!Page || !pageRoot) return;
 
     new Page(pageRoot, params);
 
-    const menuBarEl = this.$el.querySelector('#menu-bar');
-    console.log('menuBarEl:', menuBarEl); // 디버깅용 로그
+    if (isGamePage) {
+      // MenuBar 컴포넌트 생성 및 DOM에 추가
+      const menuBarContainer = document.createElement('div');
+      document.body.appendChild(menuBarContainer); // MenuBar를 body에 추가
+      const menuBar = new MenuBar(menuBarContainer);
 
-    if (!menuBarEl) {
-      console.error('#menu-bar element not found!');
-      return;
+      // MENU_BAR 아이콘 클릭 이벤트
+      const menuIcon = document.querySelector(`.${styles.gameNav} img`);
+      menuIcon.addEventListener('click', () => {
+        menuBar.openMenu();
+      });
     }
-
-    // MenuBar 컴포넌트 생성 및 DOM에 추가
-    const menuBarContainer = document.createElement('div');
-    document.body.appendChild(menuBarContainer); // MenuBar를 body에 추가
-    const menuBar = new MenuBar(menuBarContainer);
-
-    // MENU_BAR 아이콘 클릭 이벤트
-    const menuIcon = document.querySelector(`.${styles.gameNav} img`);
-    menuIcon.addEventListener('click', () => {
-      menuBar.openMenu();
-    });
   }
 }
 

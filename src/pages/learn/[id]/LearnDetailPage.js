@@ -1,6 +1,7 @@
 import Component from '../../../core/Component';
 import styles from './LearnDetailPage.module.css';
 import learns from '../../../data/learns.json';
+import { BUILD_ROUTES } from '../../../constants/routes';
 
 export default class ArticleDetailPage extends Component {
   template() {
@@ -25,12 +26,12 @@ export default class ArticleDetailPage extends Component {
         <div class="${styles['learn-navigation']}">
           ${
             learn.id > 1
-              ? `<a href="/articles/${learn.id - 1}"><button class="${styles['nav-button']}">이전 글 보기</button></a>`
+              ? `<a href="${BUILD_ROUTES.LEARN_DETAIL(learn.id - 1)}"><button class="${styles['nav-button']}">이전 글 보기</button></a>`
               : '<div></div>'
           }
           ${
             learn.id < learns.length
-              ? `<a href="/articles/${learn.id + 1}"><button class="${styles['nav-button']}">다음 글 보기</button></a>`
+              ? `<a href="${BUILD_ROUTES.LEARN_DETAIL(learn.id + 1)}"><button class="${styles['nav-button']}">다음 글 보기</button></a>`
               : '<div></div>'
           }
         </div>
