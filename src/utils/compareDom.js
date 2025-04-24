@@ -28,15 +28,25 @@ const compareDOM = (nodeA, nodeB) => {
   if (nodeA.nodeName !== nodeB.nodeName) return false;
 
   // 속성 비교 (name=value 기준)
-  const attrA = nodeA.attributes;
-  const attrB = nodeB.attributes;
+  const attrA = Array.from(nodeA.attributes).map((attr) => ({
+    name: attr.name,
+    value: attr.value.trim(),
+  }));
+  const attrB = Array.from(nodeB.attributes).map((attr) => ({
+    name: attr.name,
+    value: attr.value.trim(),
+  }));
+
   if (attrA.length !== attrB.length) return false;
 
-  for (let i = 0; i < attrA.length; i++) {
-    const attrName = attrA[i].name;
-    if (attrB.getNamedItem(attrName)?.value !== attrA[i].value) {
-      return false;
-    }
+  // 속성 이름과 값이 모두 일치하는지 확인
+  const attrSetA = new Set(attrA.map((attr) => `${attr.name}=${attr.value}`));
+  const attrSetB = new Set(attrB.map((attr) => `${attr.name}=${attr.value}`));
+
+  if (attrSetA.size !== attrSetB.size) return false;
+
+  for (const attr of attrSetA) {
+    if (!attrSetB.has(attr)) return false;
   }
 
   const childrenA = getMeaningfulChildren(nodeA);
@@ -46,8 +56,8 @@ const compareDOM = (nodeA, nodeB) => {
   if (childrenA.length !== childrenB.length) return false;
 
   // 모든 자식 노드 재귀적으로 비교
-  for (let i = 0; i < nodeA.childNodes.length; i++) {
-    if (!compareDOM(nodeA.childNodes[i], nodeB.childNodes[i])) {
+  for (let i = 0; i < childrenA.length; i++) {
+    if (!compareDOM(childrenA[i], childrenB[i])) {
       return false;
     }
   }

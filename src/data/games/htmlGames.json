@@ -12,8 +12,8 @@
     "title": "로그인 폼이 작동하지 않는다!",
     "description": "사용자가 아이디와 비밀번호를 입력한 후,\n'로그인' 버튼을 눌러야 하는데 버튼을 클릭할 수 없다.\n버튼이 클릭되게 수정해라.",
     "hint": "`<form>` 태그 안에 `<button>` 태그가 누락됐다.",
-    "bugCode": "<form>\n <button onclick=\"alert('안녕하세요!')\">\n  클릭\n </button>\n</form>",
-    "answer": "<form>\n <button type=\"button\" onclick=\"alert('안녕하세요!')\">\n  클릭\n </button>\n</form>"
+    "bugCode": "<form>\n  <input type=\"text\" name=\"username\" placeholder=\"아이디\">\n  <input type=\"password\" name=\"password\" placeholder=\"비밀번호\">\n  <div>로그인</div>\n</form>",
+    "answer": "<form>\n  <input type=\"text\" name=\"username\" placeholder=\"아이디\">\n  <input type=\"password\" name=\"password\" placeholder=\"비밀번호\">\n  <button>로그인</button>\n</form>"
   },
   {
     "id": 3,
@@ -33,11 +33,11 @@
   },
   {
     "id": 5,
-    "title": "검색 엔진에 노출되지 않는 웹 페이지",
-    "description": "이 웹 페이지는 잘 만들어졌지만, 검색 엔진에서 제대로 인식되지 않는다.\n`SEO(검색 엔진 최적화)`를 위해\n`description`으로 “이 웹사이트는 HTML, CSS, JavaScript 학습을 위한 공간입니다.”,\n`keywords`로 “HTML, CSS, JavaScript, 웹 개발”을 추가해라.",
-    "hint": "`<head>` 태그에 `<meta>` 태그를 넣어 description과 keywords를 설정할 수 있다.",
-    "bugCode": "<html>\n<head>\n  <title>내 웹사이트</title>\n</head>\n<body>\n  <h1>환영합니다!</h1>\n</body>\n</html>",
-    "answer": "<html>\n<head>\n  <title>내 웹사이트</title>\n  <meta name=\"description\" content=\"이 웹사이트는 HTML, CSS, JavaScript 학습을 위한 공간입니다.\">\n  <meta name=\"keywords\" content=\"HTML, CSS, JavaScript, 웹 개발\">\n</head>\n<body>\n  <h1>환영합니다!</h1>\n</body>\n</html>"
+    "title": "웹 페이지의 의미가 명확하지 않아!",
+    "description": "이 웹 페이지는 구조는 잘 잡혀 있지만, 의미 없는 `<div>` 태그만 사용하고 있다.\n`시맨틱 태그`를 활용하여 웹 페이지의 의미를 명확히 표현해보자.",
+    "hint": "`<header>`, `<nav>`, `<main>`, `<footer>` 같은 시맨틱 태그를 사용해보자.",
+    "bugCode": "<html>\n<head>\n  <title>내 포트폴리오</title>\n</head>\n<body>\n  <div>\n    <h1>홍길동</h1>\n  </div>\n  <div>\n    <ul>\n      <li><a href=\"#\">소개</a></li>\n      <li><a href=\"#\">프로젝트</a></li>\n      <li><a href=\"#\">연락처</a></li>\n    </ul>\n  </div>\n  <div>\n    <p>안녕하세요. 저는 웹 개발자 홍길동입니다.</p>\n  </div>\n  <div>\n    <p>&copy; 2025 홍길동</p>\n  </div>\n</body>\n</html>",
+    "answer": "<html>\n<head>\n  <title>내 포트폴리오</title>\n</head>\n<body>\n  <header>\n    <h1>홍길동</h1>\n  </header>\n  <nav>\n    <ul>\n      <li><a href=\"#\">소개</a></li>\n      <li><a href=\"#\">프로젝트</a></li>\n      <li><a href=\"#\">연락처</a></li>\n    </ul>\n  </nav>\n  <main>\n    <p>안녕하세요. 저는 웹 개발자 홍길동입니다.</p>\n  </main>\n  <footer>\n    <p>&copy; 2025 홍길동</p>\n  </footer>\n</body>\n</html>"
   },
   {
     "id": 6,
