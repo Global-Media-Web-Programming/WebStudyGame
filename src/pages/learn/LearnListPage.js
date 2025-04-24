@@ -1,5 +1,6 @@
 import Component from '../../core/Component';
 import ArticleThumbnail from '../../components/article-thumbnail/ArticleThumbnail.js';
+import learns from '../../data/learns.json';
 
 export default class LearnPage extends Component {
   template() {
@@ -14,8 +15,6 @@ export default class LearnPage extends Component {
       console.error('Error: .learn-list element not found');
       return;
     }
-
-    const { learns } = this.props;
 
     learns.forEach((learn) => {
       const $thumbnail = document.createElement('div');
