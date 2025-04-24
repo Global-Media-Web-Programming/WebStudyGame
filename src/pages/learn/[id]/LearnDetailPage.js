@@ -18,7 +18,6 @@ export default class ArticleDetailPage extends Component {
           <span class="${styles['label']}">작성자 :</span> ${learn.writer}
         </div>
                 <div class="${styles['learn-content-placeholder']}">
-          <img src="${learn.image}" alt="${learn.title}" class="${styles['learn-image']}" />
         </div>
         <div class="${styles['learn-main']}">
           ${learn.content}

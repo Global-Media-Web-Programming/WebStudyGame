@@ -23,7 +23,6 @@ export default class LearnPage extends Component {
 
       new ArticleThumbnail($thumbnail, {
         title: learn.title,
-        image: learn.image,
         desc: learn.description,
       });
 
