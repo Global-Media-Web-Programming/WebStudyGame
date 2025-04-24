@@ -10,7 +10,7 @@
   flex-direction: column;
   gap: 10px;
   width: 360px; /* article 너비 + 여유공간 */
-  height: 100vh;
+  height: 100%;
   padding-right: 10px; /* 스크롤바 공간 확보 */
   overflow-y: auto;
 }

@@ -8,6 +8,7 @@
   font-weight: 600;
   color: #ffffff;
   text-align: center;
+  white-space: nowrap;
   cursor: pointer;
   outline: none;
   border: none;
